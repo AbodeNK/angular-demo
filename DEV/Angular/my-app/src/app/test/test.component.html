@@ -1,0 +1,44 @@
+<h2 style="font-size: 18px; color:rgb(252, 0, 0);font-family:Arial, Helvetica, sans-serif; text-align: center; margin:10px;">
+   {{test.length}} Test
+</h2>
+<ul>
+    <li *ngFor="let test of test">
+     {{test}}
+    </li>
+</ul>
+<button class="btn btn-primary">save</button><br><br>
+
+   <h2><i class="bi"
+    [ngClass]="{
+     'bi-star-fill':icon,
+     'bi-star':!icon
+    }"
+    (click)="onclick()"
+    ></i> </h2> <br>
+    <input type="text"[(ngModel)]="tittel" ><br>
+    {{tittel | tittelcas}} <br>
+    <span class="glyphicon glyphicon-heart"></span>
+
+   <i class=" fa fa-heart fa-2x "aria-hidden="true"
+      [class.aktiv]="aktives"
+      (click)="onclickt()"
+      >
+   </i><br>
+   {{likeCount}}
+   <br>
+   <ul class="nav nav-pills">
+    <li  class="nav-item" >
+       <a class="nav-link" [class.active]="viewMode=='map'"(click)="viewMode='map'" routerLink="/FirstAngularApp">map view</a>
+    </li>
+    <li class="nav-item" >
+       <a class="nav-link" [class.active]="viewMode=='list'" (click)="viewMode='list'" routerLink="/FirstAngularApp">list view</a>
+    </li>
+   </ul>
+   <div [ngSwitch]="viewMode">
+      <div *ngSwitchCase="'map'">map view content </div>
+      <div *ngSwitchCase="'list'">list view content</div>
+      <div *ngSwitchDefault>default</div>
+   </div>
+    
+
+

@@ -1,0 +1,45 @@
+.zippy{
+
+border: 2px;
+border-color: rgb(251, 184, 1);
+border-style:solid;
+border-radius: 10px;
+width: 95%;
+background-color: rgb(51, 130, 135);
+color: rgb(241, 238, 235);
+font-size: 20px;
+margin: 10px;
+padding: auto;
+top: 650px;
+//position:absolute;
+padding-bottom: 20px;
+
+
+}
+.zippy-heading{
+font-style:initial;
+font-weight: bold;
+font-family: Arial, Helvetica, sans-serif;
+padding: 20px;
+cursor: pointer;
+
+}
+.zippy-body{
+    padding: 20px;
+}
+.exp{
+background-color: rgb(74, 207, 211);
+
+}
+.fa{
+right: 20px;
+//position:absolute;
+
+}
+.form-control.ng-touched.ng-invalid{
+ border: 2px solid red;
+
+}
+button{
+    margin: 10px;
+}

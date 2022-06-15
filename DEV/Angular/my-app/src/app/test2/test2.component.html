@@ -1,0 +1,100 @@
+<div class="zippy">
+    <div class="zippy-heading"
+    [class.exp]="isExp"
+    (click)="change()"
+    >
+        {{title}}
+        <i class="fa " 
+        [ngClass]="{
+        'fa-chevron-up': isExp,
+        'fa-chevron-down':!isExp
+    
+       }" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="isExp" class="zippy-body">
+        <ng-content></ng-content>
+        <form #f="ngForm" >
+            <div class="form-group">
+                <label for="firstName">first Name</label>
+                <input  required minlength="3" maxlength="20" 
+                ngModel name="firstName" #firstName="ngModel" 
+                type="text" id="firstName" class="form-control">
+                <div class="alert alert-danger" 
+                *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName?.errors?.['required']">
+                    First Name is required</div>
+                <div *ngIf="firstName?.errors?.['minlength']">
+                    minimum {{firstName.errors?.['minlength'].requiredLength}} chart</div>
+                <div *ngIf="firstName?.errors?.['maxlength']">
+                    maxmal 20 chart</div>
+                </div>
+            </div>
+            
+    <form  [formGroup]="form">
+        <div class="form-group">
+           <label for="comment">comment</label>
+           <textarea formControlName="comments" 
+            name="comment" id="comment" cols="30" rows="10"
+            class="form-control">
+           </textarea>
+           <div *ngIf="comments?.pending">wait</div>
+           <div  *ngIf="comments?.touched && comments?.invalid" class="alert alert-danger">
+            <div *ngIf="comments?.errors?.['required']">
+           comment is required</div>
+           <div *ngIf="comments?.errors?.['noSpace']">
+            you cant write @ in the comment</div>
+            <div *ngIf="comments?.errors?.['isUseetName']">
+               this name ist usset</div>
+             <div *ngIf="comments?.errors?.['minlength']">
+            minimum {{comments?.errors?.['minlength'].requiredLength}} chart</div>
+           </div>
+        </div>
+
+       </form>
+            
+         
+        
+            <div class="checkbox">
+                <label for="">
+                    <input  type="checkbox"
+                     ngModel name="isSubscribed">is subscribed ?
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="" id="contactMethod">
+                
+                <select required ngModel #contact="ngModel" 
+                 name="contactMethod" id="contactMethod" 
+                 class="form-control">
+                 <option 
+                 *ngFor="let method of contactMethod"[value]="method.id">
+                 {{method.name}}</option>
+                </select>
+                <div class="alert alert-danger" 
+                *ngIf="contact.touched && !contact.valid">
+                you most select your contact method
+            </div>
+        </label>
+            </div>
+            <p>
+                {{f.value | json}} <br>
+                
+            </p>
+            <button class="btn btn-primary" [disabled]="!f.valid">submit
+
+            </button>
+        </form>
+    </div>
+    
+   <!--<form  [formGroup]="forms">
+        <input type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
+        <ul class="list-group">
+            <li 
+            *ngFor="let topic of topics.controls"
+            class="list-group-item">
+          {{topic.value}}
+          </li>
+        </ul>
+  
+         </form>-->
+</div>

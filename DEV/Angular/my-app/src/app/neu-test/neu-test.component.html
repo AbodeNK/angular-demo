@@ -1,0 +1,13 @@
+
+<button class="btn btn-primary" 
+(click)="adminLink()" >admin</button>
+<button class="btn btn-primary"  routerLink="" 
+(click)="logout()" >logout</button>
+<div class="continer">
+<input type="text" [(ngModel)]="search" 
+(keyup)="keyup()"  class="form-control mr-sm-2" placeholder="Search" /><br>
+<input type="text"[(ngModel)]="text"
+ (keyup)="keyup()" class="form-control mr-sm-2" /><br>
+<!--{{textarry}}-->
+<div [innerHtml]="htmlToAdd"></div>
+</div>

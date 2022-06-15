@@ -1,0 +1,13 @@
+
+<div class="b" >
+    <input (keyup.enter)="create(text)"#text value="create">
+    <input [(ngModel)]="update" value="update value">
+   <ul class="list-group" *ngFor="let postObjct of posts">
+        <li class="list-group-item">
+            <button (click)="updatePost(postObjct)"#post
+            class="btn btn-default btn-sm">Update</button>
+            <button (click)="deletePost(postObjct)"
+            class="btn btn-default btn-sm">delete</button>
+            {{postObjct.title}}</li>
+    </ul>
+</div>
