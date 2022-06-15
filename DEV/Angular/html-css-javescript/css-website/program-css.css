@@ -1,0 +1,38 @@
+#table{
+	background:radial-gradient(rgba(58,17,255,2),rgba(239,50,192,4),rgba(0,0,0,0.5) );
+	width:200;
+	height:300;
+	top:200px;
+	text-align:center;
+	position:relative;
+	color:000;
+	
+}
+#table input[type='submit'],[type='reset'],input[type='button'] {
+	color:ff00ff ;
+	font-size:20px;
+	border-radius:30px;
+    text-align:center;
+}
+#div_text{
+	height:40px;
+	color:ffffff;
+	text-align:left;
+}
+.programmes{
+	
+	
+	position:relative;
+	width:100%;
+	background-image:url(bg5.jpg);
+	height:822px;
+	background-position:center;
+
+}
+.div_programmes{
+	
+	background:url(bg5.jpg);
+	height:970;
+	
+	
+}
