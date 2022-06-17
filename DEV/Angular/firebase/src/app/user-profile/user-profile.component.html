@@ -1,0 +1,11 @@
+<div class="form-container mat-elevation-z5 text-center" *ngIf="user|async as user" >
+    <h2  > Hallo {{user.displayName}}</h2>
+    <div class="profile-imge">
+        <img  width="150" height="150" [src]="user.photoURL ?? 'assets/images/emptyP.jpg'">
+        <button mat-mini-fab  (click)="inputfield.click()" >
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+    <input #inputfield type="file" hidden (change)="uploadImage($event,user)">
+
+</div>

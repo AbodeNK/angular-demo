@@ -1,0 +1,26 @@
+<div class="form-container mat-elevation-z5" >
+    <h1>SingUp</h1>
+<form [formGroup]="singIn" (ngSubmit)="submit()">
+  <mat-form-field>
+    <input  matInput placeholder="Name" formControlName="name">
+    <mat-error *ngIf="name.errors?.['required']"> name is required </mat-error>
+    <mat-error *ngIf="!name.errors?.['minLength']"> Name Must be 3 letter</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput placeholder="Email address" formControlName="email">
+    <mat-error *ngIf="email.errors?.['required']"> Email is required </mat-error>
+    <mat-error *ngIf="email.errors?.['email']"> Enter correct Eamil Address </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password" placeholder="Password" formControlName="password">
+    <mat-error *ngIf="password.errors?.['required']"> password is required </mat-error>
+    <mat-error *ngIf="!password.errors?.['minLength']"> password must be 6 letter</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password" placeholder="Confirm Password " formControlName="confirmPassword">
+    <mat-error *ngIf="confirmPassword.errors?.['required']"> password is required </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="singIn.errors?.['passwordDontMatch']"> Password Dont Match</mat-error><br>
+  <button mat-raised-button color="accent"  type="submit"> Sing Up</button>
+</form>
+</div>

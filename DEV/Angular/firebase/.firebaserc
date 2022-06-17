@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-9b709": {
+      "hosting": {
+        "firebase": [
+          "fir-9b709"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-9b709"
+  }
+}

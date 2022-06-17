@@ -1,0 +1,9 @@
+.form-container{
+    max-width:1000px;
+}
+.profile-imge>img{
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}

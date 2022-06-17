@@ -1,13 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable, Subscription } from 'rxjs';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
 
-export class AppComponent implements OnDestroy {
+@Component({
+  selector: 'app-firebass-test',
+  templateUrl: './firebass-test.component.html',
+  styleUrls: ['./firebass-test.component.css']
+})
+export class FirebassTestComponent implements OnDestroy  {
+
   items1$:Observable<any[]>;
 
   // items1:Observable<any[]>;
@@ -56,4 +57,3 @@ delet(item:any,i:number){
 
 }
 }
-

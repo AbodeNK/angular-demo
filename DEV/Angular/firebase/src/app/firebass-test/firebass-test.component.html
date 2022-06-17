@@ -1,0 +1,17 @@
+<!-- <button (click)="ngOnDestroy()">go oflline</button> -->
+<input type="text" (keyup.enter)="add(course)"#course>
+<ul>
+ <li *ngFor="let item of items$|async;let i=index;">{{item.key}}
+   <button  (click)="uptade(item,i)" class="btn btn-primary">uptades</button>
+   <button  (click)="delet(item,i)" class="btn btn-primary">delet</button>
+ </li>
+</ul>
+<ul>
+ <li *ngFor="let items of items1$|async">{{items.authe}}</li>
+</ul>
+{{items1$|async|json}}
+<!-- <ul *ngIf="items1$|async as item ">
+ <li>{{item.authe}}</li>
+ <li>>{{(items1$|async).price}}</li>
+ <li>{{(items1$|async).titel}}</li>
+</ul> -->

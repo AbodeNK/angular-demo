@@ -1,0 +1,26 @@
+<mat-toolbar color="primary"> 
+    <button  routerLink=""  color="accent" mat-button>
+     <mat-icon>home</mat-icon>
+    </button>
+    <button  routerLink="/firebassTest"  color="accent" mat-button>
+        <mat-icon>add</mat-icon>
+    </button>
+    <ng-container  *ngIf="authService.currentUser|async as user; else loginButton">
+        <button class="toolbar-right"  [mat-menu-trigger-for]="userMenu"  color="accent" mat-button>
+            <img   class="profile-image-toolbar" width="30" height="30"[src]="user.photoURL ?? 'assets/images/emptyP.jpg'">{{user.displayName}}
+            <mat-icon>expand_more</mat-icon>
+           </button>
+    </ng-container>
+
+    <ng-template #loginButton>
+        <button  routerLink="/login"  color="accent" mat-button>
+            <mat-icon>login</mat-icon>Login
+           </button>
+    </ng-template>
+    
+   </mat-toolbar>
+
+   <mat-menu #userMenu="matMenu" color="accent">
+    <button mat-button color="accent" routerLink="/user" >Profil</button>
+    <button mat-button color="accent" (click)="logout()">Logout</button>
+   </mat-menu>
