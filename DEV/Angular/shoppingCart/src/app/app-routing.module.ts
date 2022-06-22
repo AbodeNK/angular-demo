@@ -18,6 +18,7 @@ import { UserSttingComponent } from './user/user-stting/user-stting.component';
 import { canActivate,redirectLoggedInTo,redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { AdminServiceService } from './service/admin-service.service';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { NewProductsComponent } from './admin/new-products/new-products.component';
 
 const redirectLogged = () => redirectUnauthorizedTo(['/login'])
 const redirecthoem = ()=> redirectLoggedInTo([''])
@@ -69,6 +70,11 @@ const routes: Routes = [
   },
   {
     path:'admin/products',component:ProductsManageComponent,
+    ...canActivate(redirectLogged,),
+    canActivate:[AdminServiceService]
+  },
+  {
+    path:'admin/newProducts',component:NewProductsComponent,
     ...canActivate(redirectLogged,),
     canActivate:[AdminServiceService]
   },

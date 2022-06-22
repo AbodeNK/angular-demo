@@ -31,6 +31,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { NewProductsComponent } from './admin/new-products/new-products.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HotToastModule } from '@ngneat/hot-toast';
     NotFoundComponent,
     CheckOutComponent,
     OrderSuccessComponent,
+    NewProductsComponent,
   ],
   imports: [
     BrowserModule,

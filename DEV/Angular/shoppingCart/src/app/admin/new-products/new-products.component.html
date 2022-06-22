@@ -1,0 +1,27 @@
+<div class="form-container mat-elevation-z5" >
+    <h1>add neu Products</h1>
+<form [formGroup]="newProducts" (ngSubmit)="save()">
+  <mat-form-field>
+    <input  matInput placeholder="title" formControlName="title">
+    <mat-error *ngIf="title.errors?.['required']"> title is required </mat-error>
+    <mat-error *ngIf="!title.errors?.['minLength']"> title Must be 5 letter</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput placeholder="Price" formControlName="Price">
+    <mat-error *ngIf="Price.errors?.['required']"> Price is required </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>catogry</mat-label>
+    <mat-select  name="categories">
+      <mat-option  >     
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="image URL" formControlName="imageURl">
+    <mat-error *ngIf="imageURl.errors?.['required']"> imageURl is required </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent"  type="submit"> save</button>
+  <button mat-raised-button color="accent" (click)="delet()" > delet</button>
+</form>
+</div>
