@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-9b709": {
+      "hosting": {
+        "shoppingCart": [
+          "shopping-nk"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-9b709"
+  }
+}

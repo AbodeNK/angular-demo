@@ -1,9 +1,14 @@
 .form-container{
-    max-width:1000px;
+    max-width:600px;
 }
 .profile-imge>img{
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
     
+}
+.name-image{
+    display: flex;
+    gap:16px;
+    justify-content: center;
 }

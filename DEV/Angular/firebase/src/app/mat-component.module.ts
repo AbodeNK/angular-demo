@@ -19,6 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -45,6 +46,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatDialogModule,
     MatMenuModule,
     MatSidenavModule,
+    MatSlideToggleModule,
   ]
 })
 export class MatComponentModule { }

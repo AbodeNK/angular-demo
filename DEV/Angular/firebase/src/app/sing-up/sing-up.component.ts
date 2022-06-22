@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { switchMap } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
+import { UsersService } from '../service/users.service';
 
 export function passwordMatch():ValidatorFn {
   return(control:AbstractControl ):ValidationErrors | null =>{
@@ -37,7 +39,12 @@ export class SingUpComponent implements OnInit {
     ('',[Validators.required,Validators.minLength(6)]),
   },{validators : passwordMatch()})
 
-  constructor( private auth:AuthenticationService,private toast:HotToastService,private router:Router) { }
+  constructor( 
+    private auth:AuthenticationService,
+    private toast:HotToastService,
+    private router:Router,
+    private usersService : UsersService,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -57,7 +64,10 @@ export class SingUpComponent implements OnInit {
   submit(){
     if(!this.singIn.valid)return;
     const{name,email,password}=this.singIn.value;
-    this.auth.singUp(name,email,password).pipe(
+    this.auth.singUp(email,password).pipe(
+      switchMap(({ user: { uid } }) =>
+      this.usersService.addUser({ uid, email, displayName: name })
+    ),
       this.toast.observe({
         success:'You have succesfule Sing In',
         loading:'Wait we Sing In',

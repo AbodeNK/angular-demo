@@ -1,0 +1,107 @@
+<mat-toolbar class="navbar-contener" color="primary" fxLayoutAlign="space-between center">
+    <div >   
+        <button  color="accent" routerLink=""  mat-button>
+        <mat-icon>home</mat-icon>
+       </button>
+       <button  color="accent" routerLink="shoppingCart"  mat-button>
+        <mat-icon>shopping_cart</mat-icon>
+       </button>
+       <button  color="accent" routerLink="shopp"  mat-button>
+        <mat-icon>shopp</mat-icon>
+       </button>
+    </div>
+
+    <!-- menu large -->
+    <div *ngIf="!deviceXS && !deviceSM" >
+      <ng-template #loginButton>
+        <button  routerLink="/login"  
+           color="accent" mat-button>
+           <mat-icon>login</mat-icon>
+        </button>
+      </ng-template>
+
+     <ng-container *ngIf="user$|async as user; else loginButton ">
+        <button color="accent" (click)="logout()" mat-button>
+         <mat-icon>logout</mat-icon>log Out
+        </button>
+         <button *ngIf="user.firstName && !user.isAdmin ; else noUserName "  
+          #userButton [matMenuTriggerFor]="userMenu" color="accent"   mat-button>
+          {{user.firstName}}
+         </button>
+         <ng-template #noUserName>
+            <button *ngIf="!user.isAdmin" #userButton [matMenuTriggerFor]="userMenu" color="accent"   mat-button>
+             user
+          </button>
+        </ng-template>
+         <mat-menu #userMenu="matMenu">
+            <button routerLink="user" mat-menu-item>Profile</button>
+            <button routerLink="user/order" mat-menu-item>order</button>
+            <button routerLink="user/setting" mat-menu-item>setting </button>  
+         </mat-menu>
+         <button *ngIf="user.isAdmin" #adminButton color="accent"  [matMenuTriggerFor]="adminMenu"  mat-button>
+         <mat-icon >admin_panel_settings</mat-icon>{{user.firstName+' '+user.lastName}}
+         </button>
+         <mat-menu #adminMenu="matMenu">
+            <button routerLink="admin" mat-menu-item>admin</button>
+            <button routerLink="admin/order" mat-menu-item>order</button>
+            <button routerLink="admin/manageOrder" mat-menu-item>Manage Order</button>
+            <button routerLink="admin/products" mat-menu-item>products Manage</button>
+          </mat-menu>
+        </ng-container>
+        <ng-container >
+            <mat-slide-toggle (change)="isDarkModeSwitched($event)" class="margin-right margin-left" ></mat-slide-toggle>
+            <mat-icon color="accent" >bedtime</mat-icon>
+        </ng-container>
+     </div>
+        <!-- menu xs -->
+    <div *ngIf="deviceXS || deviceSM">
+            <ng-template #loginButtonSX>
+             <button  routerLink="/login"  
+               color="accent" mat-button>
+               <mat-icon>login</mat-icon>Login
+             </button><br>
+
+             <mat-slide-toggle  (change)="isDarkModeSwitched($event)" class="margin-right margin-left" ></mat-slide-toggle>
+              <mat-icon  color="accent">bedtime</mat-icon>
+            </ng-template>
+            
+            <button mat-button [matMenuTriggerFor]="MenuXS"><mat-icon >menu</mat-icon></button>
+             <!-- Admin menu Small  -->
+            <mat-menu #MenuXS="matMenu">
+             <ng-container *ngIf="user$|async as user; else loginButtonSX ">   
+                <button *ngIf="user.isAdmin" mat-menu-item [matMenuTriggerFor]="adminMenuXS">
+                    {{user.firstName+' '+user.lastName}}
+                </button>
+             <mat-menu #adminMenuXS="matMenu">
+                <button routerLink="admin" mat-menu-item>admin</button>
+                <button routerLink="admin/order" mat-menu-item>order</button>
+                <button routerLink="admin/manageOrder" mat-menu-item>Manage Order</button>
+                <button routerLink="admin/products" mat-menu-item>products Manage</button>
+             </mat-menu>
+             <!-- user menu Small  -->
+             <button *ngIf="user.firstName && !user.isAdmin ; else noUserName "  
+              #userButton  mat-menu-item [matMenuTriggerFor]="userMenuXS" color="accent" >
+                {{user.firstName}}
+               </button>
+               <ng-template #noUserName>
+                  <button *ngIf="!user.isAdmin" #userButton mat-menu-item [matMenuTriggerFor]="userMenuXS" color="accent" >
+                   user
+                </button>
+              </ng-template>
+              <mat-menu #userMenuXS="matMenu">
+                <button routerLink="user" mat-menu-item>Profile</button>
+                <button routerLink="user/order" mat-menu-item>order</button>
+                <button routerLink="user/setting" mat-menu-item>setting </button>  
+              </mat-menu>
+              <button color="accent" (click)="logout()" mat-button>
+                <mat-icon>logout</mat-icon>log Out
+               </button>
+               <ng-container  >
+                <mat-slide-toggle  (change)="isDarkModeSwitched($event)" class="margin-right margin-left" >
+                </mat-slide-toggle>
+                <mat-icon  color="accent">bedtime</mat-icon>
+            </ng-container>
+             </ng-container>
+            </mat-menu>
+        </div>
+</mat-toolbar>

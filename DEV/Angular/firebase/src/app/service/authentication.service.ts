@@ -17,9 +17,8 @@ export class AuthenticationService {
   logout(){
      return from(this.auth.signOut());
   }
-  singUp(name:string,email:any,password:any){
-   return from(createUserWithEmailAndPassword(this.auth,email,password))
-   .pipe (switchMap(({user}) => updateProfile(user,{displayName:name})));
+  singUp(email:any,password:any){
+   return from(createUserWithEmailAndPassword(this.auth,email,password));
   }
   uptadeProfileData(profileData:Partial<UserInfo>):Observable<any>{
    const user = this.auth.currentUser;

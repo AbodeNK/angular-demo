@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
-<div class="content">
-  <router-outlet></router-outlet>
+<div class="app-contener mat-app-background">
+  <app-navbar (isDark)="isDarkMode($event)"></app-navbar>
+  <div class="outlet"> <router-outlet ></router-outlet></div>
 </div>
 
 

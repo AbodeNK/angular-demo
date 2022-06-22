@@ -1,0 +1,10 @@
+<div class="app-contener mat-app-background">
+  <app-navbar 
+    (isDark)="isDarkMode($event)"
+    [deviceXS]='deviceXS'
+    [deviceSM]='deviceSM'>
+  </app-navbar>
+  <div class="outlet">
+     <router-outlet ></router-outlet>
+  </div>
+</div>

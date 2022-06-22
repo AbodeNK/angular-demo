@@ -5,19 +5,25 @@
     <button  routerLink="/firebassTest"  color="accent" mat-button>
         <mat-icon>add</mat-icon>
     </button>
-    <ng-container  *ngIf="authService.currentUser|async as user; else loginButton">
-        <button class="toolbar-right"  [mat-menu-trigger-for]="userMenu"  color="accent" mat-button>
-            <img   class="profile-image-toolbar" width="30" height="30"[src]="user.photoURL ?? 'assets/images/emptyP.jpg'">{{user.displayName}}
-            <mat-icon>expand_more</mat-icon>
-           </button>
-    </ng-container>
-
     <ng-template #loginButton>
         <button  routerLink="/login"  color="accent" mat-button>
-            <mat-icon>login</mat-icon>Login
+            <mat-icon>login</mat-icon>
            </button>
     </ng-template>
-    
+       <div class="toolbar-right">
+        <ng-container  *ngIf="user$|async as user; else loginButton">
+            <button  [mat-menu-trigger-for]="userMenu"  color="accent" mat-button>
+                <img   class="profile-image-toolbar" width="30" height="30"[src]="user.photoURL ?? 'assets/images/emptyP.jpg'">{{user.displayName}}
+                <mat-icon>expand_more</mat-icon>
+               </button>
+        </ng-container>
+        <ng-container >
+            <mat-slide-toggle (change)="isDarkModeSwitched($event)"  class="margin-right" ></mat-slide-toggle>
+            <mat-icon >bedtime</mat-icon>
+        </ng-container>
+
+       </div>
+
    </mat-toolbar>
 
    <mat-menu #userMenu="matMenu" color="accent">

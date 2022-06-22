@@ -1,9 +1,9 @@
 @use '@angular/material' as mat;
 
 @include mat.core();
-
-$my-primary: mat.define-palette(mat.$gray-palette, 800);
-$my-accent: mat.define-palette(mat.$amber-palette, 600, 100, 400);
+//defule them 
+$my-primary: mat.define-palette(mat.$blue-grey-palette,700);
+$my-accent: mat.define-palette(mat.$purple-palette, 400, 100, 400);
 $my-warn: mat.define-palette(mat.$red-palette, 800, 100, 400);
 
 $my-theme: mat.define-light-theme((
@@ -13,8 +13,28 @@ $my-theme: mat.define-light-theme((
    warn:$my-warn,
  )
  
-));
-
+)); 
 @include mat.all-component-themes($my-theme);
 @include mat.core-theme($my-theme);
 @include mat.button-theme($my-theme);
+
+//dark mode them
+$my-primary: mat.define-palette(mat.$gray-palette, 600);
+$my-accent: mat.define-palette(mat.$amber-palette, 600, 100, 400);
+$my-warn: mat.define-palette(mat.$red-palette, 800, 100, 400);
+
+$my-dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn:$my-warn,
+ )
+ 
+));
+
+.darkMode{
+@include mat.all-component-themes($my-dark-theme);
+@include mat.core-theme($my-dark-theme);
+@include mat.button-theme($my-dark-theme);
+
+}

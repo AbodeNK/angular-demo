@@ -1,0 +1,18 @@
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
+      <mat-error *ngIf="email.errors?.['required']"> Email is required </mat-error>
+      <mat-error *ngIf="email.errors?.['email']"> Enter correct Eamil Address </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput  type="password" formControlName="password" required>
+    <mat-error *ngIf="password.errors?.['required']"> password is required </mat-error>
+    <mat-error *ngIf="!password.errors?.['minLength']"> password must be 6 chart</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent" type="submit">Login</button>
+  <button mat-raised-button color="accent" routerLink="/signUP" >Sing UP</button>
+  </form>
+ </div>

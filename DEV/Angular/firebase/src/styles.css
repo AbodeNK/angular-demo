@@ -2,14 +2,23 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body{
-    padding: 10px;
-    background-color: rgba(172, 174, 174, 0.724);
-    }
+
 .mat-tab-body-content{
 padding: 20px;
+}
+.app-contener{
+    margin: 0px;
+     padding: 15px;
+     height: 100%;
+ }
+ .outlet{
+  padding-top: 5px;
+ }
+ .flex-stretch{
+    flex: 1 0 auto;
+ }
 
-} 
+/* Form desing start */
 .form-container{
 
     display: block;
@@ -38,5 +47,7 @@ padding: 20px;
 .text-center{
     text-align: center;
 }
-
-
+/* Form desing end */
+.margin-right{
+    margin-right: 5px;
+}
