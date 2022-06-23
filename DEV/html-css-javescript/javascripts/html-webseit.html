@@ -1,0 +1,368 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
+<script type="text/javascript" src="jquery.test.js" ></script>
+<script type="text/javascript" src="jQuery UI - v1.12.1.js" ></script>
+<script src="gridstack.js.js"></script>
+
+
+
+<script type="text/javascript" src="backend.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="css-webseit.css"  >
+
+<link rel="stylesheet" type="text/css" href="jQuery UI - v1.12.1.css"  >
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="gridstack.js.css" />
+ <link rel="stylesheet" href="https://bootswatch.com/3/paper/bootstrap.css">
+
+
+</head>
+
+<button id="textEdit_On_Of"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+
+<body id="body" > 
+
+<div id="Div_setting" class="col-1" > 
+<i class="fa fa-chevron-down" aria-hidden="true" id="settingof" ></i>
+<i class="fa fa-chevron-up" aria-hidden="true" id="settingon" ></i>
+</div>
+
+<div id="setting">
+<nav>
+<ul >
+<li style="font-size:25px ;color:rgb(217, 109, 8);">head design :</li>
+
+<li id="headEdi">background
+<ul class="submenu" >
+<li>background-image<ul class="submenu"><li><input type="file" id="background-imagecd" value="background-imagecd" class="col-5" style="font-size:12px;" ></li><li>
+<select id="background_repeatcd" title="background_repeat">
+	<option value="repeat-x">repeat-x</option>
+    <option value="repeat-y">repeat-y</option>
+    <option value="no-repeat" >no-repeat</option>
+    <option value="repeat" >repeat</option>
+	</select>
+</li><li><input type="range" id="background_sizecd"  min="10" max="100"><button id="val_background_sizecd"></button></li>
+<li>Delete back image:<button id="delete_background-imagecd" title="delete background-image"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+<li>background-color<ul class="submenu"><li><input type="color" id="background_colorcd" title="background color" ></li>
+<li>Delete back color:<button id="delete_background-colorcd" title="delete background-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+
+</ul>
+</li>
+<li id="headEdi">border
+<ul class="submenu">
+<li>border-position
+<ul><li>
+<select id="border_positioncd" title="border_position">
+	<option value="border">all</option>
+	<option value="bottom"> border-bottom</option>
+    <option value="left"> border-left</option>
+    <option value="top" > border-top</option>
+    <option value="right" >border-right</option>
+	</select>
+</li></ul>
+</li>
+<li>border-style<ul class="submenu"><li>
+<select id="border_stylecd" title="border_style">
+	<option value="none">no</option>
+    <option value="dotted">dotted</option>
+    <option value="dashed" >dashed</option>
+    <option value="solid" >solid</option>
+	<option value="double">double</option>
+    <option value="groove">groove</option>
+    <option value="inset" >inset</option>
+    <option value="outset" >outset</option>
+	</select>
+</li></ul></li>
+<li>border-size:<input type="range" id="border_sizecd"  min="1" max="25"><button id="val_border_sizecd"></button></li>
+<li>border-color<ul class="submenu"><li><input type="color" id="border_colorcd" title="border color" ></li>
+<li>Delete back color:<button id="delete_border-colorcd" title="delete border-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+</ul>
+</li>
+
+
+
+<!--i class="fa fa-chevron-down" aria-hidden="true" id="settingheadof" ></i>
+<i class="fa fa-chevron-up" aria-hidden="true" id="settingheadon" ></i-->
+
+
+
+
+<li style="font-size:25px ;color:rgb(217, 109, 8);"> Body design :</li>
+
+<li id="bodyEdi" >background
+<ul class="submenu">
+<li>background-image<ul class="submenu"><li><input type="file" id="background-imagecb" value="background-imagecb" class="col-5" style="font-size:12px;" ></li><li>
+<select id="background_repeatcb" title="background_repeat">
+	<option value="repeat-x">repeat-x</option>
+    <option value="repeat-y">repeat-y</option>
+    <option value="no-repeat" >no-repeat</option>
+    <option value="repeat" >repeat</option>
+	</select>
+</li><li><input type="range" id="background_sizecb"  min="10" max="100"><button id="val_background_sizecb"></button></li>
+<li>Delete back image:<button id="delete_background-imagecb" title="delete background-image"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+<li>background-color<ul class="submenu"><li><input type="color" id="background_colorcb" title="background color" ></li>
+<li>Delete back color:<button id="delete_background-colorcb" title="delete background-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+
+</ul>
+</li>
+<li>background_video
+<ul class="submenu">
+ <input type="file" value="background_video"  id="background_video"  class="col-16" style="font-size:12px;" >
+</ul>
+<li>Delete back image:<button id="delete_background_video" title="delete background_video"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</li>
+<li id="bodyEdi" >border
+<ul class="submenu">
+<li>border-position
+<ul class="submenu"><li>
+<select id="border_positioncb" title="border_position">
+	<option value="border">all</option>
+	<option value="bottom"> border-bottom</option>
+    <option value="left"> border-left</option>
+    <option value="top" > border-top</option>
+    <option value="right" >border-right</option>
+	</select>
+</li></ul>
+</li>
+<li>border-style<ul class="submenu" ><li>
+<select id="border_stylecb" title="border_style">
+	<option value="none">no</option>
+    <option value="dotted">dotted</option>
+    <option value="dashed" >dashed</option>
+    <option value="solid" >solid</option>
+	<option value="double">double</option>
+    <option value="groove">groove</option>
+    <option value="inset" >inset</option>
+    <option value="outset" >outset</option>
+	</select>
+</li></ul></li>
+<li>border-size:<input type="range" id="border_sizecb"  min="1" max="25"><button id="val_border_sizecb"></button></li>
+<li>border-color<ul class="submenu"><li><input type="color" id="border_colorcb" title="border color" ></li>
+<li>Delete back color:<button id="delete_border-colorcb" title="delete border-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+</ul>
+</li>
+
+
+
+
+<!--i class="fa fa-chevron-down" aria-hidden="true" id="settingbodyof" ></i>
+<i class="fa fa-chevron-up" aria-hidden="true" id="settingbodyon" ></i-->
+<li style="font-size:25px ;color:rgb(217, 109, 8);"> Add :</li>
+<li>Logo-uplode:<input type="file" id="logo" value="logo" class="col-5" style="font-size:12px;" ></li>
+<li><input type="button" id="menu" value="menu" class="col-6" ><ul>
+<li>menu_name: <input type="text" id="menu_name" value="Home"  class="col-18"></li>
+<li> menu_Url: <input type="text" id="menu_Url" value=""  class="col-18"></li></ul></li>
+
+<li><input type="button" id="div_create" value="text" class="col-9"  ><ul class="submenu"><li>
+z-index:<input type="range" id="div_z-index"  min="0" max="100"><button id="val_div-z"></button></li></ul></li>
+
+<li>Uplod YOUR Media File:<ul class="submenu">
+<li>choose your file type:
+<select name="fileType" id="fileType" class="col-17" >
+	<option value=""></option>
+    <option value="videofile">Video</option>
+    <option value="imgfile">IMG</option>
+    <option value="audiofile" >Audio</option>
+  </select></li>
+ <input type="file" value="IMG Uplod"  id="File_uplod"  class="col-16" style="font-size:12px;" >
+<li> z-index:<input type="range" id="file_z-index"  min="0" max="100"><button id="val_file-z"></button></li></ul></li>
+<li><input type="button" id="line" value="line" class="col-9"  >
+<li><input type="button" id="img_gallery" value="Image Gallery"> </li>
+
+<li ><input type="button" id="ss" value="save"  class="col-15" >
+<a download style="display:none;" id ="dow" >download</a></li>
+</ul>
+</nav>
+
+</div>
+
+ <div id="container" class="col-23">
+ <head><meta name="viewport" content="width=device-width, initial-scale=1"> <meta charset="UTF-8" >
+ <link rel="stylesheet" href="C:\Users\abdulaa\Documents\GitHub\S-A\gridstack.js.css" />
+ <link rel="stylesheet" href="https://bootswatch.com/3/paper/bootstrap.css"> 
+ <script src="C:\Users\abdulaa\Documents\GitHub\S-A\gridstack.js.js"></script>
+ <script src="C:\Users\abdulaa\Documents\GitHub\S-A\kbkend.js"></script>
+  
+ <style>
+ ::-webkit-scrollbar {
+  width: 7px;
+}
+#bodyc ::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:rgb(53, 49, 68); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:rgb(217, 109, 8); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 162, 0); 
+}
+ 
+ </style>
+ </head>
+  <div id="headc" >head <div id="menu1"><ul id="menuul"></ul></div></div>
+ <div  class="grid-stack "  id="bodyc" > body</div>
+
+ </div>
+
+
+<div id="textEditor" class="col-26" >
+<div id="textbutton" class="col-27" >
+<button id="closEditor" title="closEditor" ><i class="fa fa-times" id="" aria-hidden="true" ></i></button>
+<button id="boldbutton" title="bold" ><i class="fa fa-bold" aria-hidden="true"></i></button>
+<button id="italicbutton" title="italic" ><i class="fa fa-italic" aria-hidden="true"></i></button>
+<button id="supbutton" title="sup"> <i class="fa fa-superscript" aria-hidden="true"></i></button>
+<button id="subbutton" title="sub"> <i class="fa fa-subscript" aria-hidden="true"></i></button>
+<button id="strikebutton" title="strike"><i class="fa fa-strikethrough" aria-hidden="true"></i></button>
+
+<button id="align_left" title="align left"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+<button id="align_center" title="align center"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+<button id="align_right" title="align right"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+<button id="align_justify" title="align justify"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+<button id="cut" title="cut"><i class="fa fa-cut" aria-hidden="true"></i></button>
+<button id="copy" title="copy"><i class="fa fa-copy" aria-hidden="true"></i></button>
+<button id="indent" title="indent"><i class="fa fa-indent" aria-hidden="true"></i></button>
+<button id="dedent" title="dedent"><i class="fa fa-dedent" aria-hidden="true"></i></button>
+<button id="nlistbutton" title="Numberd list"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+<button id="blistbutton" title="bulleted list"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
+<input type="color" id="color_font" title="font color" >
+<input type="color" id="color_backfont" title="backgroundt color" >
+<select  id="font_famlie" >
+    <option value="Georgia">Georgia</option>
+    <option value="Palatino Linotype">Palatino Linotype</option>
+    <option value="Book Antiquar" >Book Antiqua</option>
+    <option value="Times New Roman" >Times New Roman</option>
+	<option value="Arial" >Arial</option>
+	<option value="Helvetica" >Helvetica</option>
+	<option value="Arial Black" >Arial Black</option>
+	<option value="Impact" >Impact</option>
+	<option value="Lucida Sans Unicode" >Lucida Sans Unicode</option>
+	<option value="Tahoma" >Tahoma</option>
+	<option value="Verdana" >Verdana</option>
+	<option value="Courier New" >Courier New</option>
+	<option value="Lucida Console" >Lucida Console</option>
+	<option value="initial" >initial</option>
+  </select>
+<select id='font_size'>
+<script>
+for (var i=1; i<8; i++){
+ document.write("<option value='"+i+"'>"+i+"</option>");
+
+}
+
+</script>
+
+</select>
+<button id="linkbutton" title="Create linke"><i class="fa fa-link" aria-hidden="true"></i></button>
+<button id="unlinkbutton" title="Remov linke"><i class="fa fa-chain-broken" aria-hidden="true"></i></button>
+<button id="undobutton" title="Undo the previous action"><i class="fa fa-undo" aria-hidden="true"></i></button>
+<button id="redobutton" title="Redo"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+<button id="" title="table"><i class="fa fa-table" aria-table="true"></i></button>
+</div>
+
+
+
+
+</div>
+
+<div id="Edit" >
+<button id="closEdit" title="closEdit" ><i class="fa fa-times" id="" aria-hidden="true" ></i></button>
+<ul>
+<li>background
+<ul>
+<li>background-image<ul><li><input type="file" id="background-image" value="background-image" class="col-5" ></li><li>
+<select id="background_repeat" title="background_repeat">
+	<option value="repeat-x">repeat-x</option>
+    <option value="repeat-y">repeat-y</option>
+    <option value="no-repeat" >no-repeat</option>
+    <option value="repeat" >repeat</option>
+	</select>
+</li><li><input type="range" id="background_size"  min="10" max="100"><button id="val_div-back-size"></button></li>
+<li>Delete back image:<button id="delete_background-image" title="delete background-image"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+<li>background-color<ul><li><input type="color" id="background_color" title="background color" ></li>
+<li>Delete back color:<button id="delete_background-color" title="delete background-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+
+</ul>
+</li>
+<li>border
+<ul>
+<li>border-position
+<ul><li>
+<select id="border_position" title="border_position">
+	<option value="border">all</option>
+	<option value="bottom"> border-bottom</option>
+    <option value="left"> border-left</option>
+    <option value="top" > border-top</option>
+    <option value="right" >border-right</option>
+	</select>
+</li></ul>
+</li>
+<li>border-style<ul><li>
+<select id="border_style" title="border_style">
+	<option value="none">no</option>
+    <option value="dotted">dotted</option>
+    <option value="dashed" >dashed</option>
+    <option value="solid" >solid</option>
+	<option value="double">double</option>
+    <option value="groove">groove</option>
+    <option value="inset" >inset</option>
+    <option value="outset" >outset</option>
+	</select>
+</li></ul></li>
+<li>border-size:<input type="range" id="border_size"  min="1" max="25"><button id="val_divborder-size"></button></li>
+<li>border-color<ul><li><input type="color" id="border_color" title="border color" ></li>
+<li>Delete back color:<button id="delete_border-color" title="delete border-color"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul></li>
+</ul>
+</li>
+<li> z-index:<input type="range" id="div_zindex"  min="0" max="100"><button id="val_divz"></button></li>
+<li>Delete:<button id="delete" title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>
+</ul>
+</div>
+
+
+<div id="img_gal_edit" >
+<button id="gal_edit_clos"><i class="fa fa-times" id="" aria-hidden="true"  style="font-size:25px;" ></i></button>
+<div id="img_gal_div">
+<div id="gal_edit_menu">
+<nav>
+<li style="font-size:25px ;color:rgb(217, 109, 8);" >Uplod img 
+<ul>
+<input type="file" value="IMG Uplod"  id="gal_img_uplod"  class="col-16" style="font-size:12px;" >
+</ul>
+</li>
+</nav>
+</div>
+<div id="gal_edit_conten"></div>
+</div>
+</div>
+
+
+<div id="htmlc" ></div>
+
+</body>
+
+
+</html>
