@@ -1,10 +1,11 @@
-<div class="form-container mat-elevation-z5" >
-    <h1>add neu Products</h1>
+<mat-grid-list *ngIf="!deviceXS && !deviceSM; else sm" cols="2" rowHeight="500px" >
+  <mat-grid-tile class="new-products-form-container" >  
 <form [formGroup]="newProducts" (ngSubmit)="save()">
+  <h1>add new Products</h1>
   <mat-form-field>
-    <input  matInput placeholder="title" formControlName="title">
-    <mat-error *ngIf="title.errors?.['required']"> title is required </mat-error>
-    <mat-error *ngIf="!title.errors?.['minLength']"> title Must be 5 letter</mat-error>
+    <input  matInput placeholder="Products Name" formControlName="ProductsName">
+    <mat-error *ngIf="ProductsName.errors?.['required']"> title is required </mat-error>
+    <mat-error *ngIf="!ProductsName.errors?.['minLength']"> title Must be 5 letter</mat-error>
   </mat-form-field>
   <mat-form-field>
     <input  matInput placeholder="Price" formControlName="Price">
@@ -12,16 +13,82 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>catogry</mat-label>
-    <mat-select  name="categories">
-      <mat-option  >     
+    <mat-select  name="categories" formArrayName="categories">
+      <mat-option  >
+        Breads   
+      </mat-option>
+      <mat-option  >
+        Fruits     
+      </mat-option>
+      <mat-option  >
+        Vegetables   
+      </mat-option>
+      <mat-option  >
+        Meats     
       </mat-option>
     </mat-select>
 </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="image URL" formControlName="imageURl">
-    <mat-error *ngIf="imageURl.errors?.['required']"> imageURl is required </mat-error>
+    <input matInput placeholder="image URL" formControlName="imageURL">
+    <mat-error *ngIf="imageURL.errors?.['required']"> imageURl is required </mat-error>
   </mat-form-field>
   <button mat-raised-button color="accent"  type="submit"> save</button>
   <button mat-raised-button color="accent" (click)="delet()" > delet</button>
 </form>
-</div>
+</mat-grid-tile>
+<mat-grid-tile >
+  <mat-card class="products-card">
+    <mat-card-header>
+      <mat-card-title> </mat-card-title>
+      <mat-card-subtitle>{{ProductsName.value}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="imageURL.value ?? 'assets/images/emptyP.jpg'"  >
+    <mat-card-content>
+      <p>
+
+      </p>
+    </mat-card-content>
+  </mat-card> 
+</mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #sm>
+  <mat-grid-list cols="1" rowHeight="500px" >
+    <mat-grid-tile class="new-products-form-container" >  
+  <form [formGroup]="newProducts" (ngSubmit)="save()">
+    <h1>add new Products</h1>
+    <mat-form-field>
+      <input  matInput placeholder="ProductsName" formControlName="ProductsName">
+      <mat-error *ngIf="ProductsName.errors?.['required']"> title is required </mat-error>
+      <mat-error *ngIf="!ProductsName.errors?.['minLength']"> title Must be 5 letter</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input  matInput placeholder="Price" formControlName="Price">
+      <mat-error *ngIf="Price.errors?.['required']"> Price is required </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>catogry</mat-label>
+      <mat-select  name="categories">
+        <mat-option  >     
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="image URL" formControlName="imageURL">
+      <mat-error *ngIf="imageURL.errors?.['required']"> imageURl is required </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent"  type="submit"> save</button>
+    <button mat-raised-button color="accent" (click)="delet()" > delet</button>
+  </form>
+  </mat-grid-tile>
+  <mat-grid-tile >
+    <div class="show-protuct">
+      <h1>title : categories</h1>
+      <h1> Products : name</h1>
+      <img src="#" width="300" height="300">
+      <h1> Prise : 30€</h1> 
+    </div>
+  </mat-grid-tile>
+  </mat-grid-list>
+
+</ng-template>
