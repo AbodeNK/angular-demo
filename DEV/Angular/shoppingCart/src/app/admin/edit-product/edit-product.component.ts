@@ -1,19 +1,20 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit , Inject} from '@angular/core';
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
 import { productData } from 'src/app/data/newProductsData';
+import {MatDialog, MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import {finalize } from 'rxjs/operators';
 import { CategoriesService } from 'src/app/service/categories.service';
 import { SharingDataService } from 'src/app/service/sharing-data.service';
 import { UplodImagesService } from 'src/app/service/uplod-images.service';
 
-
 @Component({
-  selector: 'app-new-products',
-  templateUrl: './new-products.component.html',
-  styleUrls: ['./new-products.component.scss']
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.scss']
 })
-export class NewProductsComponent implements OnInit {
+export class EditProductComponent implements OnInit {
+
   newProducts=new FormGroup({
     ProductsName : new FormControl ('',[Validators.required,Validators.minLength(3)]),
     Price : new FormControl ('',[Validators.required]),
@@ -21,6 +22,7 @@ export class NewProductsComponent implements OnInit {
     imageURL : new FormControl ('',[Validators.required]),
 
   })
+  
   deviceXS:boolean;
   deviceSM:boolean;
   // imageSrc= this.uplodImages.imageUrl ;
@@ -29,6 +31,8 @@ export class NewProductsComponent implements OnInit {
     private sharingData:SharingDataService,
    private uplodImageService:UplodImagesService,
     private storage:AngularFireStorage,
+    public dialogRef: MatDialogRef<EditProductComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any,
     ) { }
   
   ngOnInit(): void {
@@ -36,6 +40,16 @@ export class NewProductsComponent implements OnInit {
     this.sharingData.currentdeviceSM.subscribe(SM=> this.deviceSM=SM);
     this.newProducts.patchValue({imageURL: 'assets/images/empty.jpg'});
     // console.log(this.imageSrc)
+    const data=this.data;
+    this.newProducts.setValue({
+      ProductsName: data.ProductsName, 
+      Price: data.Price ,
+      categories:data.categories ,
+      imageURL:data.imageURL , 
+ 
+    }); 
+    
+   
     
   }
   get ProductsName(){
@@ -54,35 +68,24 @@ export class NewProductsComponent implements OnInit {
   save(){
    
     const{categories,ProductsName,Price,imageURL}=this.newProducts.value;
-    const uid=ProductsName+Math.random()
+    const uid=this.data.uid;
     if(!this.newProducts.valid){
       return null;
-    }else{  this.categories.addProduct({categories,ProductsName,Price,imageURL,uid}).subscribe;
+    }else{  this.categories.updateProduct({categories,ProductsName,Price,imageURL,uid}).subscribe;
    } 
    this.newProducts.reset();
+   this.dialogRef.close();
   }
-  
-  uplodImage(event:any ){
-      if(event.target.files[0]){
-        const{categories,ProductsName}=this.newProducts.value;
-        const Name= Math.random();
-        const path ='image/products/'+categories+'/'+ProductsName+Name;
-        const storageRef = this.storage.ref(path);
-        this.uplodImageService.uplodImage(event.target.files[0],path).pipe(
-        finalize(() => {
-           storageRef.getDownloadURL().subscribe((url)=>{
-           this.newProducts.patchValue({imageURL: url});
-         })
-        })
-       ).subscribe()
-      }else{
-        this.newProducts.patchValue({imageURL: 'assets/images/empty.jpg'});
-      }
+  delet(){
+    const uid=this.data.uid;
+    this.categories.deletProduct({uid}).subscribe;
+    this.dialogRef.close();
   }
-  resetForm(){
-    
+  onNoCick():void{
+    this.dialogRef.close();
   }
-  
 
+  
+  
 
 }

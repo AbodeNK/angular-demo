@@ -32,6 +32,9 @@ import {LayoutModule} from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { NewProductsComponent } from './admin/new-products/new-products.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { EditProductComponent } from './admin/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,7 @@ import { NewProductsComponent } from './admin/new-products/new-products.componen
     CheckOutComponent,
     OrderSuccessComponent,
     NewProductsComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,8 @@ import { NewProductsComponent } from './admin/new-products/new-products.componen
     MaterialCModule,
     LayoutModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
@@ -71,6 +77,7 @@ import { NewProductsComponent } from './admin/new-products/new-products.componen
     HotToastModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EditProductComponent]
 })
 export class AppModule { }

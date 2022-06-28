@@ -23,6 +23,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+
+
 
 
 
@@ -54,6 +58,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatExpansionModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatTableModule,
+    MatSortModule,
   ]
 })
 export class MaterialCModule { }

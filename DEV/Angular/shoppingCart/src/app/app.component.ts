@@ -14,6 +14,9 @@ export class AppComponent implements OnInit,OnDestroy {
   mediaSub: Subscription;
   deviceXS:boolean;
   deviceSM:boolean;
+  deviceMD:boolean;
+  deviceLG:boolean;
+  deviceXL:boolean;
   constructor(@Inject(DOCUMENT) 
   private document: Document, 
   private rederer:Renderer2,
@@ -36,6 +39,20 @@ export class AppComponent implements OnInit,OnDestroy {
       this.deviceXS=result.mqAlias === 'xs'? true :false;
       this.sharingData.updatedeviceXS(this.deviceXS);
     })
+    this.mediaSub=this.mediaObserver.media$.subscribe((result:MediaChange)=>{
+      this.deviceMD=result.mqAlias === 'md'? true :false;
+      this.sharingData.updatedeviceMD(this.deviceMD);
+    })
+    this.mediaSub=this.mediaObserver.media$.subscribe((result:MediaChange)=>{
+      this.deviceLG=result.mqAlias === 'lg'? true :false;
+      this.sharingData.updatedeviceLG(this.deviceLG);
+      console.log(result.mqAlias)
+    })
+    this.mediaSub=this.mediaObserver.media$.subscribe((result:MediaChange)=>{
+      this.deviceXL=result.mqAlias === 'xl'? true :false;
+      this.sharingData.updatedeviceXL(this.deviceXL);
+    })
+    
     
    
   }
