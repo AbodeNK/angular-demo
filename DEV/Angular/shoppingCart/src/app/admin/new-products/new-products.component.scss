@@ -4,7 +4,6 @@
 
 }
 .mat-grid-list mat-form-field{
-
     width: 100%;
 }
 .mat-grid-list button{
@@ -12,14 +11,12 @@
     border-radius: 20px;
     justify-content: center;
 }
-.mat-grid-list img{
-    max-width: 300px;
-    max-height: fit-content;
 
-
-}
 .show-protuct h1{
     width: 100%;
     display:block;
 
+}
+.products-card{
+    max-width:  400px;
 }

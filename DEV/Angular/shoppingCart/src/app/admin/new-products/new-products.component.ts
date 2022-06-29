@@ -21,9 +21,7 @@ export class NewProductsComponent implements OnInit {
     imageURL : new FormControl ('',[Validators.required]),
 
   })
-  deviceXS:boolean;
-  deviceSM:boolean;
-  // imageSrc= this.uplodImages.imageUrl ;
+
 
   constructor(private categories:CategoriesService,
     private sharingData:SharingDataService,
@@ -32,10 +30,7 @@ export class NewProductsComponent implements OnInit {
     ) { }
   
   ngOnInit(): void {
-    this.sharingData.currentdeviceXS.subscribe(XS=> this.deviceXS=XS);
-    this.sharingData.currentdeviceSM.subscribe(SM=> this.deviceSM=SM);
     this.newProducts.patchValue({imageURL: 'assets/images/empty.jpg'});
-    // console.log(this.imageSrc)
     
   }
   get ProductsName(){

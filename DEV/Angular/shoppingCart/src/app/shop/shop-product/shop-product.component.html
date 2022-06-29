@@ -1,63 +1,27 @@
-<mat-grid-list *ngIf="deviceXL || deviceLG" cols="5"  >
-<mat-grid-tile *ngFor="let item of item$ " > 
+
+<div class="shopp-continer">
+<div fxLayout="row wrap" fxLayoutGap="15px grid">
+  <div  fxFlex="20%" fxFlex.lg="25%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngFor="let item of item$ ">
     <mat-card class="products-card" >
       <mat-card-header >
         <mat-card-title>{{item.categories}} </mat-card-title>
-        <mat-card-subtitle>{{item.ProductsName}}</mat-card-subtitle>
-        <mat-card-subtitle>€ {{item.Price}}</mat-card-subtitle>
+        <!-- <mat-card-subtitle>{{item.ProductsName}}</mat-card-subtitle> -->
       </mat-card-header>
+      <img mat-card-image mat-card-xl-image [src]="item.imageURL"><br>
       <mat-card-content >
-       <img class="products-img" mat-card-xl-image [src]="item.imageURL">
+        {{item.ProductsName}} <br>
+        € {{item.Price}}
       </mat-card-content>
+      <mat-card-actions>
+        <button   mat-raised-button  (click)="addToCart(product)" class="cart-button" color="primary"   mat-button>
+          add to shopping Cart  
+         </button>
+      </mat-card-actions>
     </mat-card> 
-  </mat-grid-tile>
-  </mat-grid-list>
+  </div>
+</div>
+</div>
 
-
-    <mat-grid-list *ngIf="deviceMD" cols="4">
-      <mat-grid-tile *ngFor="let item of item$ "> 
-          <mat-card class="products-card" layout="column"layout-align="center center" >
-            <mat-card-header>
-              <mat-card-title>{{item.categories}} </mat-card-title>
-              <mat-card-subtitle>{{item.ProductsName}}</mat-card-subtitle>
-              <mat-card-subtitle>  € {{item.Price}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="content">
-              <img mat-card-xl-image [src]="item.imageURL">
-            </mat-card-content>
-          </mat-card> 
-        </mat-grid-tile>
-        </mat-grid-list>
-
-    <mat-grid-list *ngIf="deviceSM" cols="2">
-      <mat-grid-tile *ngFor="let item of item$ "> 
-          <mat-card class="products-card" layout="column"layout-align="center center" >
-            <mat-card-header>
-              <mat-card-title>{{item.categories}} </mat-card-title>
-              <mat-card-subtitle>{{item.ProductsName}}</mat-card-subtitle>
-              <mat-card-subtitle>  € {{item.Price}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="content">
-              <img mat-card-xl-image [src]="item.imageURL">
-            </mat-card-content>
-          </mat-card> 
-        </mat-grid-tile>
-        </mat-grid-list>
-
-    <mat-grid-list *ngIf="deviceXS" cols="1">
-      <mat-grid-tile *ngFor="let item of item$ "> 
-          <mat-card class="products-card" layout="column"layout-align="center center" >
-            <mat-card-header>
-              <mat-card-title>{{item.categories}} </mat-card-title>
-              <mat-card-subtitle>{{item.ProductsName}}</mat-card-subtitle>
-              <mat-card-subtitle>  € {{item.Price}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="content">
-              <img class="products-img" mat-card-xl-image [src]="item.imageURL">
-            </mat-card-content>
-          </mat-card> 
-        </mat-grid-tile>
-        </mat-grid-list>
 
 
 

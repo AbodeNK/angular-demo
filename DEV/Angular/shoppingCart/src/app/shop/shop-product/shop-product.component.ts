@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { productData } from 'src/app/data/newProductsData';
 import { CategoriesService } from 'src/app/service/categories.service';
-import { SharingDataService } from 'src/app/service/sharing-data.service';
+import { ShopingCartService } from 'src/app/service/shoping-cart.service';
 
 @Component({
   selector: 'app-shop-product',
@@ -9,26 +10,31 @@ import { SharingDataService } from 'src/app/service/sharing-data.service';
   styleUrls: ['./shop-product.component.scss']
 })
 export class ShopProductComponent implements OnInit {
-  deviceXS:boolean;
-  deviceSM:boolean;
-  deviceMD:boolean;
-  deviceLG:boolean;
-  deviceXL:boolean;
   item$;
-  constructor(private sharingData:SharingDataService ,
+  @Input('product') product:productData;
+  constructor( 
     private firestore: AngularFirestore,
     private products:CategoriesService,
+    private cartService:ShopingCartService,
     ) { }
 
   ngOnInit(): void {
-    this.sharingData.currentdeviceXS.subscribe(XS=> this.deviceXS=XS);
-    this.sharingData.currentdeviceSM.subscribe(SM=> this.deviceSM=SM);
-    this.sharingData.currentdeviceMD.subscribe(MD=> this.deviceMD=MD);
-    this.sharingData.currentdeviceLG.subscribe(LG=> this.deviceLG=LG);
-    this.sharingData.currentdeviceXL.subscribe(XL=> this.deviceXL=XL);
     this.products.getProducts().subscribe(data=> this.item$=data);
   }
-
+  
+  addToCart(product:productData){
+    let cratID = localStorage.getItem('cartID');
+    if(!cratID){
+      this.cartService.addToCart().then(result=>{
+        localStorage.setItem('cartID',result.id);
+        //add product
+      })
+    
+    }else{
+      //add product
+  
+    }
+  }
 
  
 

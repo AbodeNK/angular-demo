@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" class="continer">
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" class="">
    
-   <div fxLayoutGap="20px">
+   <div fxLayoutGap="20px" fxLayoutAlign="space-around center " class="header-continer ">
       <mat-form-field>
          <input (keyup)="applyFilter($event)" matInput placeholder="serche"  >
        </mat-form-field>
@@ -9,7 +9,7 @@
       New Products
       </button>
    </div>
-      <div class="mat-elevation-z8">
+      <div class="mat-elevation-z8 table-continer">
          <table mat-table [dataSource]="dataSource" matSort >
   
            <ng-container matColumnDef="categories">
