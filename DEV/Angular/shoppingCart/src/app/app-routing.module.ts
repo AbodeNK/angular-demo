@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin/admin.component';
 import { OrderComponent } from './admin/order/order.component';
 import { ProductsManageComponent } from './admin/products-manage/products-manage.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -11,7 +10,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ShopProductComponent } from './shop/shop-product/shop-product.component';
 import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
-import { UseManageOrderComponent } from './user/use-manage-order/use-manage-order.component';
 import { UserOrderComponent } from './user/user-order/user-order.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserSttingComponent } from './user/user-stting/user-stting.component';
@@ -54,18 +52,9 @@ const routes: Routes = [
     path:'user/setting',component:UserSttingComponent,
     ...canActivate(redirectLogged)
   },
+  
   {
-    path:'admin',component:AdminComponent,
-    ...canActivate(redirectLogged,),
-     canActivate:[AdminServiceService]
-  },
-  {
-    path:'admin/order',component:OrderComponent,
-    ...canActivate(redirectLogged,),
-    canActivate:[AdminServiceService]
-  },
-  {
-    path:'admin/manageOrder',component:UseManageOrderComponent,
+    path:'admin/manageOrder',component:OrderComponent,
     ...canActivate(redirectLogged,),
     canActivate:[AdminServiceService]
   },

@@ -73,7 +73,6 @@ export class EditProductComponent implements OnInit {
       return null;
     }else{  this.categories.updateProduct({categories,ProductsName,Price,imageURL,uid}).subscribe;
    } 
-   this.newProducts.reset();
    this.dialogRef.close();
   }
   delet(){

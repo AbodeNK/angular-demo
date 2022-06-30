@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDateService } from 'src/app/service/user-date.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
-  constructor() { }
+  user=this.userDataService.userProfileDate;
+  constructor(private userDataService:UserDateService) { }
 
   ngOnInit(): void {
   }

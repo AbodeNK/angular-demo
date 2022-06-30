@@ -1,1 +1,24 @@
-<p>user-profile works!</p>
+<div  >
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" fxLayoutAlign="center center" *ngIf="user|async as user">
+      <div >
+        <mat-card class="products-card" >
+          <mat-card-header >
+            <img mat-card-avatar  mat-card-lg-image [src]="user.imageURL">
+            <mat-card-title>{{user.firstName}} </mat-card-title>
+            <mat-card-subtitle>{{user.lastName}}</mat-card-subtitle>
+          </mat-card-header>
+         <br>
+          <mat-card-content >
+            <mat-icon matSuffix>email</mat-icon> Email : {{user.email}}<br>
+            <mat-icon matSuffix>map</mat-icon> Address : {{user.address}}<br>
+            <mat-icon matSuffix>phone</mat-icon>Phone number :{{user.phone}} 
+          </mat-card-content>
+          <mat-card-actions>
+            <button   mat-raised-button  routerLink="/user/setting" class="cart-button" color="primary"   mat-button>
+              setting
+             </button>
+          </mat-card-actions>
+        </mat-card> 
+      </div>
+    </div>
+    </div>

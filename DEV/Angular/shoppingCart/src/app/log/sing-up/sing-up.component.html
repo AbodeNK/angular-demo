@@ -17,6 +17,14 @@
     <mat-error *ngIf="email.errors?.['email']"> Enter correct Eamil Address </mat-error>
   </mat-form-field>
   <mat-form-field>
+    <input  matInput type="number" placeholder="phone" formControlName="phone">
+    <mat-error *ngIf="phone.errors?.['required']"> phone is required </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input  matInput  placeholder="address" formControlName="email">
+    <mat-error *ngIf="address.errors?.['required']"> address is required </mat-error>
+  </mat-form-field>
+  <mat-form-field>
     <input matInput type="password" placeholder="Password" formControlName="password">
     <mat-error *ngIf="password.errors?.['required']"> password is required </mat-error>
     <mat-error *ngIf="!password.errors?.['minLength']"> password must be 6 letter</mat-error>

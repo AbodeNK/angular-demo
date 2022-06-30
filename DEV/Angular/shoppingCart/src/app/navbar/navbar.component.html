@@ -24,12 +24,12 @@
         <button color="accent" (click)="logout()" mat-button>
          <mat-icon>logout</mat-icon>log Out
         </button>
-         <button *ngIf="user.firstName && !user.isAdmin ; else noUserName "  
+         <button *ngIf="user.firstName ; else noUserName "  
           #userButton [matMenuTriggerFor]="userMenu" color="accent"   mat-button>
           {{user.firstName}}
          </button>
          <ng-template #noUserName>
-            <button *ngIf="!user.isAdmin" #userButton [matMenuTriggerFor]="userMenu" color="accent"   mat-button>
+            <button  #userButton [matMenuTriggerFor]="userMenu" color="accent"   mat-button>
              user
           </button>
         </ng-template>
@@ -42,8 +42,6 @@
          <mat-icon >admin_panel_settings</mat-icon>{{user.firstName+' '+user.lastName}}
          </button>
          <mat-menu #adminMenu="matMenu">
-            <button routerLink="admin" mat-menu-item>admin</button>
-            <button routerLink="admin/order" mat-menu-item>order</button>
             <button routerLink="admin/manageOrder" mat-menu-item>Manage Order</button>
             <button routerLink="admin/products" mat-menu-item>products Manage</button>
           </mat-menu>
@@ -73,13 +71,11 @@
                     {{user.firstName+' '+user.lastName}}
                 </button>
              <mat-menu #adminMenuXS="matMenu">
-                <button routerLink="admin" mat-menu-item>admin</button>
-                <button routerLink="admin/order" mat-menu-item>order</button>
                 <button routerLink="admin/manageOrder" mat-menu-item>Manage Order</button>
                 <button routerLink="admin/products" mat-menu-item>products Manage</button>
              </mat-menu>
              <!-- user menu Small  -->
-             <button *ngIf="user.firstName && !user.isAdmin ; else noUserName "  
+             <button *ngIf="user.firstName ; else noUserName "  
               #userButton  mat-menu-item [matMenuTriggerFor]="userMenuXS" color="accent" >
                 {{user.firstName}}
                </button>

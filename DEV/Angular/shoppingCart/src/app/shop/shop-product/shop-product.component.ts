@@ -23,17 +23,8 @@ export class ShopProductComponent implements OnInit {
   }
   
   addToCart(product:productData){
-    let cratID = localStorage.getItem('cartID');
-    if(!cratID){
-      this.cartService.addToCart().then(result=>{
-        localStorage.setItem('cartID',result.id);
-        //add product
-      })
-    
-    }else{
-      //add product
   
-    }
+    this.cartService.addToCart(product)
   }
 
  

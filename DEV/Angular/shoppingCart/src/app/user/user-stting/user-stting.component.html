@@ -1,1 +1,44 @@
-<p>user-stting works!</p>
+
+<div class="mat-grid-list" *ngIf="user|async as user" >
+    <div fxLayout="row wrap" fxLayoutGap="15px grid"  fxLayoutAlign="center center">
+      <div  fxFlex="50%"  fxFlex.xs="100%" >
+        <mat-card class="user-card" layout="column"layout-align="center center" >
+            <mat-card-header>
+            <img mat-card-avatar  [src]="imageURL.value">
+              <mat-card-title>{{firstName.value}} </mat-card-title>
+              <mat-card-subtitle>{{lastName.value}}</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card> <br>
+          <form [formGroup]="userPeofile" (ngSubmit)="save(user)">
+            <mat-form-field>
+              <input  matInput placeholder="first Name" formControlName="firstName">
+              <mat-error *ngIf="firstName.errors?.['required']"> first Name is required </mat-error>
+              <mat-error *ngIf="!firstName.errors?.['minLength']"> first NameMust be 3 letter</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input  matInput placeholder="last Name" formControlName="lastName">
+              <mat-error *ngIf="lastName.errors?.['required']"> last Name is required </mat-error>
+              <mat-error *ngIf="!lastName.errors?.['minLength']"> last Name Must be 3 letter</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input  matInput type="email" placeholder="email" formControlName="email">
+              <mat-error *ngIf="email.errors?.['required']"> email is required </mat-error>
+              <mat-error *ngIf="email.errors?.['email']"> Enter correct email </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input  matInput type="number" placeholder="phone" formControlName="phone">
+              <mat-error *ngIf="phone.errors?.['required']"> phone is required </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input  matInput  placeholder="address" formControlName="address">
+              <mat-error *ngIf="address.errors?.['required']"> address is required </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="image URL"  formControlName="imageURL">
+              <mat-error *ngIf="imageURL.errors?.['required']"> imageURl is required </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="accent"    type="submit"> save</button>
+            <button mat-raised-button color="accent"  type="button" (click)="inputfield.click()" > uplod Image</button>
+         </form>
+          <input #inputfield type="file" accept="image/*" hidden (change)="uplodImage($event,user)">
+     </div>

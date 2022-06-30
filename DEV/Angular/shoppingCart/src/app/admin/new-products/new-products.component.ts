@@ -1,10 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import {  FormControl, FormGroup, Validators } from '@angular/forms';
-import { productData } from 'src/app/data/newProductsData';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import {finalize } from 'rxjs/operators';
 import { CategoriesService } from 'src/app/service/categories.service';
-import { SharingDataService } from 'src/app/service/sharing-data.service';
 import { UplodImagesService } from 'src/app/service/uplod-images.service';
 
 
@@ -24,7 +22,6 @@ export class NewProductsComponent implements OnInit {
 
 
   constructor(private categories:CategoriesService,
-    private sharingData:SharingDataService,
    private uplodImageService:UplodImagesService,
     private storage:AngularFireStorage,
     ) { }
@@ -74,9 +71,7 @@ export class NewProductsComponent implements OnInit {
         this.newProducts.patchValue({imageURL: 'assets/images/empty.jpg'});
       }
   }
-  resetForm(){
-    
-  }
+
   
 
 

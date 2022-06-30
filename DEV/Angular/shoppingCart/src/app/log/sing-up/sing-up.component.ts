@@ -20,6 +20,8 @@ export class SingUpComponent implements OnInit {
     ('',[Validators.required,Validators.minLength(3)]),
     email : new FormControl
     ('',[Validators.required,Validators.email]),
+    phone : new FormControl('',[Validators.required]),
+    address : new FormControl('',[Validators.required]),
     password : new FormControl
     ('',[Validators.required,Validators.minLength(6)]),
     confirmPassword : new FormControl
@@ -49,12 +51,18 @@ export class SingUpComponent implements OnInit {
   get confirmPassword (){
     return this.singInForm.get('confirmPassword')
   }
+  get phone(){
+    return this.singInForm.get('phone') 
+  }
+  get address(){
+    return this.singInForm.get('address') 
+  }
   submit(){
     if(!this.singInForm.valid)return;
-    const{firstName,lastName,email,password}=this.singInForm.value;
+    const{firstName,lastName,email,password,phone,address}=this.singInForm.value;
     this.authservice.singUp(email,password).pipe(
       switchMap(({ user: { uid } }) =>
-      this.userDate.addUser({ uid, email, firstName,lastName })
+      this.userDate.addUser({ uid, email, firstName,lastName,phone,address })
     ),
       this.toast.observe({
         success:'You have succesfule Sing In',
