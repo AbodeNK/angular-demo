@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from 'src/app/service/auth-service.service';
+import { OrderService } from 'src/app/service/order.service';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-order',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-order.component.scss']
 })
 export class UserOrderComponent implements OnInit {
-
-  constructor() { }
+  orders$;
+  constructor(   private authService:AuthServiceService,
+    private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.orders$ = this.authService.currentUser$.pipe(
+      switchMap((u) => {
+        return this.orderService
+          .getOrdersByUser(u.uid)
+          .valueChanges({ idField: 'id' });
+      })
+    );
+    
   }
+  
 
 }

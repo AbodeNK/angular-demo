@@ -1,1 +1,39 @@
-<p>order works!</p>
+<div class="mat-elevation-z8 table-continer">
+    <table mat-table [dataSource]="dataSource" matSort >
+
+      <ng-container matColumnDef="datePlaced">
+        <mat-header-cell *matHeaderCellDef> Ordered on</mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="datePlaced">  {{element.datePlaced| date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Customer">
+        <mat-header-cell *matHeaderCellDef > Customer <br></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Customer"> {{element.shipping.firstName}} {{element.shipping.lastName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef> address <br></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="address"> {{element.shipping.address}}  </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef > phone <br></mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="phone"> {{element.shipping.phone}}  </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="view">
+        <mat-header-cell *matHeaderCellDef> view </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="view">
+       <button  mat-raised-button  (click)="openDialog(element)" color="primary"  mat-button>view</button>
+       </mat-cell>
+      </ng-container>
+  
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[4, 8, 12]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>

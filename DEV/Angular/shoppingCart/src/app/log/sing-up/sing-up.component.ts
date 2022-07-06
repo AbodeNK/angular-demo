@@ -58,6 +58,7 @@ export class SingUpComponent implements OnInit {
     return this.singInForm.get('address') 
   }
   submit(){
+    console.log(this.singInForm.valid)
     if(!this.singInForm.valid)return;
     const{firstName,lastName,email,password,phone,address}=this.singInForm.value;
     this.authservice.singUp(email,password).pipe(
@@ -72,6 +73,7 @@ export class SingUpComponent implements OnInit {
     ).subscribe(() => {
       this.router.navigate(['/user']);
     })
+   
 
   }
 

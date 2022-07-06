@@ -17,6 +17,7 @@ import { canActivate,redirectLoggedInTo,redirectUnauthorizedTo } from '@angular/
 import { AdminServiceService } from './service/admin-service.service';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { NewProductsComponent } from './admin/new-products/new-products.component';
+import { ViewOrderComponent } from './admin/view-order/view-order.component';
 
 
 const redirectLogged = () => redirectUnauthorizedTo(['/login'])
@@ -55,6 +56,11 @@ const routes: Routes = [
   
   {
     path:'admin/manageOrder',component:OrderComponent,
+    ...canActivate(redirectLogged,),
+    canActivate:[AdminServiceService]
+  },
+  {
+    path:'viewOrder',component:ViewOrderComponent,
     ...canActivate(redirectLogged,),
     canActivate:[AdminServiceService]
   },

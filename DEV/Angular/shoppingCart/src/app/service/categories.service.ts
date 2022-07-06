@@ -10,15 +10,8 @@ import { productData } from '../data/newProductsData';
 })
 export class CategoriesService {
 
-  constructor( private fireStore:Firestore,private angularFireStore:AngularFirestore) { }
-  // addProduct(categories :productData):Observable<any>{
-  //   const ref = doc(this.fireStore,'categories',categories.ProductsName+Math.random());
-  //   return from(setDoc(ref,categories));
-  // }
-  // updateProduct(categories :productData):Observable<any>{
-  //   const ref = doc(this.fireStore,'categories',categories.ProductsName);
-  //   return from(updateDoc(ref,{...categories}));
-  // }
+  constructor( private angularFireStore:AngularFirestore) { }
+
   addProduct(categories :productData):Observable<any>{
     return from( this.angularFireStore.collection('Products').doc(categories.uid).set(categories));
 

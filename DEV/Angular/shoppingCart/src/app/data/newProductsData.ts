@@ -7,6 +7,7 @@ export interface productData {
     imageURL?: string;
    
 }
-export interface Order {
-    dishes: productData[]
- }
+export interface cartItem{
+    product? :  productData;
+    quantity?:number;
+}

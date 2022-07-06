@@ -1,0 +1,20 @@
+<mat-dialog-content>
+<div class="mat-grid-list"  >
+    <div  fxLayoutAlign="center center">
+     
+        <mat-card class="products-card" layout="column"layout-align="center center"  >
+          <mat-card-header>
+            <mat-card-title> There are {{ totalItems }} Items in the order. </mat-card-title>
+          </mat-card-header>
+          <mat-card-content *ngFor="let item of data.items" fxLayout="row" fxLayoutAlign="space-between center" >
+            <img mat-card-md-image [src]="item.product.imageURL " >
+           <h3 >{{ item.quantity }} x {{ item.product.ProductsName }}</h3>
+           <h4>{{ item.totalPrice | currency: "EUR":"symbol" }}</h4>  
+          </mat-card-content>
+          <mat-card-footer fxLayout="row" fxLayoutAlign="end center" > <h3> Total:  {{ totalPrice | currency: "EUR":"symbol" }}</h3></mat-card-footer>
+        </mat-card> 
+       
+     
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,1 +1,16 @@
-<p>user-order works!</p>
+
+
+  <div  fxLayout="row wrap" >
+   <div class="continer" fxFlex="100%" *ngFor="let order of orders$ | async" >
+    <h2> Ordered on {{ order.datePlaced | date }} </h2>
+    <mat-card class="products-card" layout="row"layout-align="center center" *ngFor="let item of order.items" >
+        <mat-card-title-group>
+          <mat-card-title>{{ item.quantity }} x {{ item.product.ProductsName }}</mat-card-title>
+          <img mat-card-lg-image [src]="item.product.imageURL " >
+        </mat-card-title-group>
+        <mat-card-content fxLayout="row" fxLayoutAlign="space-between center" >
+            <h3> total Price : {{ item.quantity*item.product.Price }}</h3>
+        </mat-card-content>
+      </mat-card>
+    </div> 
+   </div>    

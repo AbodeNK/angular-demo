@@ -1,0 +1,24 @@
+<form #f="ngForm" (ngSubmit)="placeOrder()" class="mat-grid-list">
+    <mat-form-field>
+      <input #firstName="ngModel"name="firstName" required [(ngModel)]="shipping.firstName"  matInput placeholder="first Name" >
+      <mat-error *ngIf="firstName.errors?.['required']"> first Name is required </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input  #lastName="ngModel" name="lastName" required  [(ngModel)]="shipping.lastName" matInput placeholder="last Name" >
+      <mat-error *ngIf="lastName.errors?.['required']"> last Name is required </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input   #email="ngModel" name="email" required [(ngModel)]="shipping.email" matInput type="email" placeholder="email" >
+      <mat-error *ngIf="email.errors?.['required']"> email is required </mat-error>
+      <mat-error *ngIf="email.errors?.['email']"> Enter correct email </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input  #phone="ngModel" name="phone" required  [(ngModel)]="shipping.phone"  matInput type="number" placeholder="phone">
+      <mat-error *ngIf="phone.errors?.['required']"> phone is required </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input   #address="ngModel" name="address" required  [(ngModel)]="shipping.address"  matInput  placeholder="address" >
+      <mat-error *ngIf="address.errors?.['required']"> address is required </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent"   type="submit"> place order</button>
+</form>

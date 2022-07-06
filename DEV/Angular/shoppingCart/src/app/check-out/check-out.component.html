@@ -1,1 +1,20 @@
-<p>check-out works!</p>
+<div class="mat-grid-list" *ngIf="cart$ | async as cart" >
+    <div fxLayout="row wrap" fxLayoutGap="15px grid"  fxLayoutAlign="center center">
+      <div  fxFlex="50%"  fxFlex.xs="100%" >
+        <app-check-form [cart]="cart"></app-check-form>
+     </div>
+     <div  fxFlex="50%"  fxFlex.xs="100%" fxLayoutAlign="center center"  >
+        <mat-card class="products-card" layout="column"layout-align="center center" >
+          <mat-card-header>
+            <mat-card-title>  You have {{ cart.totalItemsCount }} items in your shopping cart. </mat-card-title>
+          </mat-card-header>
+          <mat-card-content *ngFor="let item of cart.items" fxLayout="row" fxLayoutAlign="space-between center" >
+           <h3 >{{ item.quantity }} x {{ item.product.ProductsName }}</h3>
+           <h4>{{ item.totalPrice | currency: "EUR":"symbol" }}</h4>  
+          </mat-card-content>
+          <mat-card-footer fxLayout="row" fxLayoutAlign="end center" > <h3> Total:  {{ cart.totalPrice | currency: "EUR":"symbol" }}</h3></mat-card-footer>
+        </mat-card> 
+       
+      </div>
+    </div>
+  </div>

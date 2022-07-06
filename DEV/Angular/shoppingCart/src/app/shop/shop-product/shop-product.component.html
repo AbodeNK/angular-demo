@@ -12,12 +12,21 @@
         {{item.ProductsName}} <br>
         € {{item.Price}}
       </mat-card-content>
-      <mat-card-actions>
-        <button   mat-raised-button  (click)="addToCart(item)" class="cart-button" color="primary"   mat-button>
+      <mat-card-actions *ngIf="cart$ | async as cart" >
+        <button *ngIf="cart.getQuantity(item) === 0; else updateQuantity"  mat-raised-button  (click)="addToCart(item)" 
+        class="cart-button" color="primary"   mat-button>
           add to shopping Cart  
          </button>
+         <ng-template #updateQuantity  >
+          <button mat-raised-button  (click)="addToCart(item)" 
+          class="cart-button" color="primary"   mat-button>+</button>
+           <span class="quantity" >{{ cart.getQuantity(item) }}</span> 
+          <button mat-raised-button  (click)="removeFromCart(item)" 
+          class="cart-button" color="primary">-</button>
+        </ng-template>
       </mat-card-actions>
     </mat-card> 
+
   </div>
 </div>
 </div>

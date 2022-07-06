@@ -35,6 +35,11 @@ import { NewProductsComponent } from './admin/new-products/new-products.componen
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { EditProductComponent } from './admin/edit-product/edit-product.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { CheckFormComponent } from './check-out/check-form/check-form.component';
+import { ViewOrderComponent } from './admin/view-order/view-order.component';
+
+
 
 @NgModule({
   declarations: [
@@ -55,6 +60,9 @@ import { EditProductComponent } from './admin/edit-product/edit-product.componen
     OrderSuccessComponent,
     NewProductsComponent,
     EditProductComponent,
+    CheckFormComponent,
+    ViewOrderComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -67,6 +75,7 @@ import { EditProductComponent } from './admin/edit-product/edit-product.componen
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    AngularFirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
@@ -76,6 +85,10 @@ import { EditProductComponent } from './admin/edit-product/edit-product.componen
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[EditProductComponent]
+  entryComponents:[
+    EditProductComponent,
+    ViewOrderComponent,
+  
+  ]
 })
 export class AppModule { }
