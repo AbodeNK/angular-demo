@@ -1,0 +1,16 @@
+<mat-form-field>
+    <mat-select placeholder="" #select
+    >
+      <app-selct-input
+       *ngIf="select.panelOpen"
+        [placeholder]=""
+        [displayMember]="'name'"
+        [array]="variables2"
+        (filteredReturn)="filteredList5 = $event"
+      ></app-selct-input>
+      <mat-option *ngFor="let item of filteredList5" [value]="item">
+        {{ item.name }}
+      </mat-option>
+      <mat-option></mat-option>
+    </mat-select>
+  </mat-form-field>

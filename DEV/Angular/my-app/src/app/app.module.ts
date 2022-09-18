@@ -23,6 +23,12 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { AuthService } from './Service/auth.service';
+import { SelctFilterComponent } from './selct-filter/selct-filter.component';
+import { SelctInputComponent } from './selct-input/selct-input.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 // import { fakeBackendProvider } from './Service/fackBackend';
 
 @NgModule({
@@ -42,6 +48,9 @@ import { AuthService } from './Service/auth.service';
     LoginComponent,
     AdminComponent,
     NoAccessComponent,
+    SelctFilterComponent,
+    SelctInputComponent,
+    
 
   ],
   imports: [
@@ -50,6 +59,9 @@ import { AuthService } from './Service/auth.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    NgxMatSelectSearchModule,
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
       {path:'login',component: LoginComponent},
@@ -63,6 +75,7 @@ import { AuthService } from './Service/auth.service';
       {path:'**',component:NotFoundComponent},
 
     ]),
+    BrowserAnimationsModule,
     
   ],
   providers: [

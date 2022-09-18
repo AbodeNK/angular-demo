@@ -1,0 +1,9 @@
+<form [formGroup]="searchForm" class="filter" >
+    <div>
+    <input #input class="filter-input" matInput placeholder="{{placeholder}}" formControlName="value" (keydown)="handleKeydown($event)">
+    </div>
+    <div *ngIf="noResults"
+       class="noResultsMessage">
+    {{noResultsMessage}}
+  </div>
+  </form>
