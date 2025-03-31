@@ -1,0 +1,57 @@
+=> zum Anwendung wechseln 
+so sieht mein tool.
+in die Mitte kommen alle hinzufügt Elemente die das Dialog braucht.
+die Elemente kann man hinzufügen wenn man hier in dies Menü List auf gewünschte Komponente klicken. es werde dann ein puppe Dialog offen. wo man ein key und die breit angeben. 
+so für  das Überschrift wählen wir das Komponente Titel Bereich. 
+die Control Name für diese Komponente art kann beliebig sein aber soll nur einmal geben.
+:: kontaktformular,
+für die breit kann man zwischen 1 und 4 auswählen 
+:: 4
+am end klicken wir auf Feld hinzufügen. 
+und hier ist die Elemente in Hauptansicht.
+
+ich werde jz schnelle die andere Elemente hinzufügen.
+marging
+:: mrg
+:: big
+Input
+:: Vorname
+:: 2
+:: Nachname
+:: 2
+:: Email
+:: 2
+nummber
+:: Telefon
+:: 2
+Datum
+:: Geburtsdatum
+:: 2
+select
+:: Land
+:: 2
+textarea
+:: Nachricht
+:: 4
+:: row 5
+Button
+:: Senden
+:: 2
+so um das button zu zentrieren
+bruache ich Die Komponent Platzhalter
+Platzhalter
+:: ph 
+:: 1
+so und jz kann ich mein Platzhalter in richtig Position bringen mithelfe das Dragge an dropp Funktion
+
+wenn man dann auf die Elemente  klickt offen ein puppe um diese Element zu konfigurieren diese wird von unser Basse Klassen dann genutzt.
+
+zb für unser Nachricht will ich das es breite werde gehe ich zum Einstellung und ändre Control rows auf 5 dann speichern.
+
+so wenn man fertig ist mit die design und konfigurieren das Dialog. kann man das HTML code und Typoskript code Kopieren und in sein Komponente einfügen.
+jz mach ich das kurz.
+
+und hier ist die ergebniss.
+
+jz zum Fazit
+>>>

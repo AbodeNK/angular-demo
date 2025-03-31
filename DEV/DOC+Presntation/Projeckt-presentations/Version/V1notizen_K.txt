@@ -1,0 +1,83 @@
+Hallo zusammen,
+heute stelle ich euch meine betriebliche Projektarbeit Code-Generators vor. Ich heiße … und freue mich, euch mein Projekt zu zeigen.
+
+Mein Agenda lautet wie folgt:
+Zuerst werde ich euch kurz meinen Ausbildungsbetrieb vorstellen. 
+Danach werde ich die Projektumgebung näher erläutern. 
+Anschließend zeige ich euch, wie der Prozess zur Entwicklung eines neuen Dialogfensters ohne mein Tool abläuft – also die Ausgangslage. 
+Danach erkläre ich, wie dieser Prozess mit meinem Tool aussieht – also der Endzustand. 
+Im Anschluss gehe ich kurz auf die Projektplanung ein. 
+Ich werde euch auch eine Live-Demo zeigen, in der ich mit meinem Tool einen Dialog erstelle. 
+Zum Schluss ziehe ich ein Fazit.
+
+Mein Ausbildungsbetrieb
+Mein Ausbildungsbetrieb ist die CPU Consult & Softwarehaus GmbH.
+Hier seht ihr das Gebäude, in dem unser Unternehmen seinen Sitz hat.
+
+Die CPU Consult & Softwarehaus GmbH wurde im Jahr 1981 von Jochen Furch gegründet und ist GmbH. Unser Unternehmen hat 50 Mitarbeiter und gehört zur Branche der Softwareentwicklung und IT-Dienstleistungen, womit es dem tertiären Sektor angehört. 
+Es handelt sich um ein mittelständisches Unternehmen mit Standorten in Augsburg und Zürich.
+
+Außerdem bilden wir nur im Bereich Fachinformatik – Anwendungsentwicklung aus.
+
+Unser Unternehmen bietet Softwarelösungen im Bereich Banking an. Unsere Hauptsoftware heißt CPU Banking, und sie besteht aus mehreren Modulen, wie zum Beispiel:
+
+Bauträger
+Kontoeröffnung
+Refieregister
+Privatkredit
+Ein besonderes Modul ist der Playground, in dem wir unsere internen Tools entwickeln.
+
+
+Projektumgebung
+Mein Projekt ist ein Teil der CPU-Banking-Software, speziell im Modul Playground, wo auch andere Tools existieren.
+
+Die CPU-Banking-Software nutzt die folgenden Technologien:
+
+Frontend: Angular und TypeScript
+Backend: Spring Boot und Java
+Da mein Projekt nur die Erstellung von Dialogfenstern im Frontend betrifft, habe ich nur mit Angular und TypeScript gearbeitet.
+
+Um den Aufbau des Projekts besser zu verstehen, stelle ich euch kurz diese beiden Technologien vor:
+
+TypeScript wurde 2012 von Microsoft entwickelt und ist ein Superset von JavaScript. Das bedeutet, alles, was JavaScript kann, kann auch TypeScript – und noch mehr. TypeScript bringt objektorientierte Konzepte in die JavaScript-Welt, wie zum Beispiel Typisierung, Interfaces und Generics. Es bietet außerdem eine frühzeitige Fehlererkennung durch den Compiler und sorgt für eine bessere Wartbarkeit des Codes.
+
+Angular ist ein Webframework, das von Google entwickelt wurde. Ursprünglich wurde es 2010 als AngularJS veröffentlicht. Nach der Einführung von TypeScript im Jahr 2012 hat sich das Angular-Team entschieden, das Framework komplett neu zu gestalten. Im Jahr 2016 wurde es als Angular 2 veröffentlicht und war eines der ersten großen Frameworks, das vollständig auf TypeScript setzte. Angular eignet sich besonders gut für Single-Page-Applications und legt großen Wert auf Modularität und Wiederverwendbarkeit. Der Grundbaustein von Angular-Anwendungen sind Komponenten, die aus HTML, TypeScript und CSS bestehen.
+
+Ausgangslage
+Ich zeige euch jetzt, wie der Prozess zur Entwicklung eines neuen Dialogfensters ohne mein Tool aussieht.
+
+Zuerst besprechen der Product Owner und der Teamleiter, wie das Dialogfenster aussehen soll. Nach der Besprechung baut der Teamleiter das Dialogdesign im Miro-Board nach. Danach wird ein Jira-Ticket erstellt und einem Entwickler zugewiesen.
+
+Der Entwickler schaut sich das Design aus dem Miro-Board an und überträgt es in den Code. Dafür muss er die HTML aus unseren vorgefertigten Komponenten zusammenbauen und sie in TypeScript passend konfigurieren. Nach der Fertigstellung prüft der Product Owner, ob der Dialog seinen Vorstellungen entspricht. Falls nicht, muss der Entwickler Änderungen vornehmen.
+
+
+Endzustand
+Nun erkläre ich euch, wie der Prozess mit meinem Tool aussieht:
+
+Der Product Owner und der Teamleiter besprechen weiterhin, wie der Dialog aussehen soll. Der Unterschied ist jedoch, dass der Teamleiter während der Besprechung den Dialog direkt mit meinem Tool erstellen kann. Dadurch kann er dem Product Owner sofort das Ergebnis zeigen und Änderungen direkt vornehmen.
+
+Die Schritte, wie das Erstellen eines Miro-Designs, das Anlegen eines Jira-Tickets und die manuelle Umsetzung durch einen Entwickler, entfallen.
+
+Das spart Zeit und macht den gesamten Prozess viel effizienter.
+
+Projektplanung
+Für die Planung meines Projekts habe ich zuerst alle Anforderungen ermittelt, die erfüllt werden mussten, um das Projektziel zu erreichen. Dabei habe ich die Anforderungen in funktionale und nicht-funktionale Anforderungen unterteilt.
+
+Die funktionalen Anforderungen habe ich als Meilensteine definiert und das Projekt Schritt für Schritt mit einem iterativen Ansatz umgesetzt. Nach jedem erreichten Meilenstein habe ich neu geplant und geschaut, ob ich alle funktionalen Anforderungen zeitlich im nächsten Meilenstein umsetzen kann. Diesen Ansatz habe ich gewählt, weil das Projekt zeitlich und bei den Ressourcen begrenzt war. Daher konnte ich nur den Umfang anpassen.
+
+Zeitplanung:
+Ich habe 7 Stunden für die Analysephase gebraucht, 7 Stunden für die Planungs- und Entwurfsphase, 40 Stunden für die Entwicklung, 8 Stunden für Tests, 8 Stunden für Fehleranalyse und Behebung und schließlich 10 Stunden für die Projektdokumentation.
+
+Entwicklungskosten:
+Für das Projekt war nur ich zuständig. Ich habe insgesamt 80 Stunden gearbeitet, und mit einem Azubi-Stundenlohn von 8 Euro ergibt das 640 Euro. Bei der Abnahme waren der Teamleiter und der Ausbilder jeweils 1 Stunde beteiligt, mit einem Stundenlohn von 50 Euro. Insgesamt ergeben sich also 740 Euro für dieses Projekt.
+
+Live-Demo
+Jetzt werde ich euch mein Tool in einer Live-Demo zeigen. Dabei erstelle ich einen Dialog und zeige euch, wie einfach und schnell das mit meinem Tool funktioniert.
+
+Fazit
+Mein Tool macht die Entwicklung von Dialogfenstern viel effizienter. Es spart Zeit und reduziert die Entwicklungskosten, weil viele Zwischenschritte wegfallen. Dadurch können wir Ressourcen besser nutzen und schneller Ergebnisse liefern.
+
+In Zukunft könnte man das Tool noch weiterentwickeln, z. B. um komplette Angular-Komponenten zu generieren oder bestehende Komponenten zu bearbeiten.
+
+Vielen Dank fürs Zuhören!
+

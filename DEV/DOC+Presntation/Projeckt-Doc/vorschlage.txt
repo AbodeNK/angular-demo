@@ -1,0 +1,19 @@
+3.4. Testen
+Die Tests wurden mit Jasmine und Karma durchgeführt. Es wurden Unit-Tests für die einzelnen Komponenten erstellt, um deren korrekte Funktion sicherzustellen. Auch Integrationstests wurden durchgeführt, um die Zusammenarbeit der Komponenten zu überprüfen. Besonders wichtig war dabei das Testen der dynamischen Erstellung und Konfiguration der Komponenten.
+
+Testing-Frameworks: Jasmine, Karma
+
+
+
+2.1 Projektumfeld
+Das Projekt wurde als Modul innerhalb einer größeren bestehenden Anwendung namens CPU entwickelt. Diese Anwendung verwendet Angular und TypeScript im Frontend und dient als zentrales Tool für verschiedene Geschäftsprozesse. Die Entwicklung des neuen Tools, ein Code-Generator für Dialogfenster, war notwendig, um die Flexibilität und Effizienz der Benutzeroberfläche zu verbessern.
+
+2.1 Projektumfeld
+Das Projektumfeld umfasst die bestehenden technischen und organisatorischen Rahmenbedingungen, unter denen das Projekt realisiert wurde. Das Projekt wurde als Teil der bestehenden CPU-Anwendung entwickelt, die bereits Angular und TypeScript als wesentliche Technologien für die Frontend-Entwicklung verwendet.
+
+
+2.2 Projektumsetzung
+Die Umsetzung des Projekts erfolgte innerhalb von 80 Stunden. Diese Zeit umfasst die gesamte Entwicklungsarbeit einschließlich der Analyse, Planung, Implementierung, Testung und Dokumentation. Das Projekt wurde in einem iterativen Ansatz entwickelt, bei dem die Funktionalitäten Schritt für Schritt hinzugefügt und getestet wurden.
+
+
+Testphase: Durchführung von Unit-Tests und Integrationstests zur Sicherstellung der Qualität und Funktionalität. In dieser Phase wurden automatisierte Tests erstellt, um die Funktionalität des Systems sicherzustellen und Regressionen zu vermeiden.

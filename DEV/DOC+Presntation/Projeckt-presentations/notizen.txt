@@ -1,0 +1,231 @@
+
+Hallo Zusammen heute stelle ich mein  Projekt Arbeit code-Generator vor ,Dabei  handelt es sich um ein Tool der die Entwicklung Prozess ein neue Dialog Fenster vereinfacht , mein Name ist Abdulaa Mousa und ich freue mich mein tool zu zeigen.
+>>>
+
+mein Agenda für heute sind
+>   
+zuerst  werde ich  kurze  mein Ausbildungsbetrieb vorstellen.
+>
+dann werde ich Projektumgebung zeigen
+>
+danach werde ich zeigen wie die Entwicklung Prozess ein neu Dialog Fenster verläuft ohne Nutzung die tool 
+>
+dann wie das Prozess aussieht  mit dem  tool
+> 
+dann gehe ich kurz auf die Projekt Planung ein.
+>
+ich zeige euch live wie das tool funktioniert
+>
+Zum Schluss die  Fazit
+>>>
+
+Unternehmen:
+Mein Ausbildungsbetrieb ist die CPU Consult & Softwarehaus GmbH.
+
+sie wurde im Jahr 1981
+sie hat ca. 50 Mitarbeiter
+und gehört zur Branche der Softwareentwicklung und IT-Dienstleistungen 
+und wir bilden momentan  nur Fachinformatik – Anwendungsentwicklung aus.
+nun zum Produkte die wir bietet
+>>>
+
+Produkte:
+Unser Unternehmen bietet Softwarelösungen im Bereich Banking an. 
+>
+Unsere Hauptsoftware heißt CPU Banking, und sie besteht aus mehreren Modulen.
+> 
+da gehört die Modulen Bauträger
+dies Modulen bitte die banken Projektmanagement ,Finanzmanagement und Risikomanagement bei  Finanzierung ein neu gebaute
+>
+Kontoeröffnung
+diese module ist ein Ständerat Konto Erfassung  von Kunde
+>
+Refieregister
+diese module bitte die banken erfassung und verwalten von alle relevanten Daten, um das Refinanzierungsregister gemäß aktuellen gesätz vollständig  und digitalisiert zu führen. 
+>
+Privatkredit
+diese module bitten die banke Kreditbedarfsanalyse und - entscheidung  bei vergaben von kreadit für Privat kunden 
+>
+und Ein besonderes Modul ist der Playground, wo  unsere internen Tools sind.
+nun zum Projektumgebung
+>>>
+
+Projektumgebung:
+>
+Mein Projekt ist  Teil der CPU-Banking-Software, speziell im Modul Playground, wo auch andere Tools sich  befinden.
+>
+ich habe VS-Code als Entwicklungsumgebung verwendet 
+>
+und die Technologien  
+>
+ Angular und TypeScript da unser CPU-Banking-Software diese Technologien in Frontend nutz
+ nun wird ich diesen beiden Technologien vorstellen
+>>>
+
+typescript:
+>
+typescript wurd 2012 von Microsoft entwickelt
+>
+und sie ist ein Superset von JavaScript. Das bedeutet, alles, was JavaScript kann, kann TypeScript auch – und noch mehr
+>
+TypeScript bringt objektorientierte Konzepte in die JavaScript-Welt, wie zum Beispiel Typ, Interfaces und Generics.
+>
+sie bitte Frühe Fehlererkennung dank Compiler 
+>
+und bessere Wartbarkeit das code
+nun zu Angular
+>>>
+
+Angular: 
+>
+Angular ist ein Framework, das von Google entwickelt wurde. Ursprünglich wurde es 2010 als AngularJS veröffentlicht. Nach der Einführung von TypeScript im Jahr 2012 hat sich das Angular-Team sich entschieden, das Framework komplett neu zu gestalten. Im Jahr 2016 wurde es als Angular 2 veröffentlicht und war eines der ersten großen JavaScript Frameworks, das vollständig auf TypeScript setzte.
+> 
+Angular eignet sich besonders gut für Single-Page-Applikation
+>
+und legt großen Wert auf Modularität und Wiederverwendbarkeit
+>
+>
+ein Angular Anwendung bestehen aus mehrere Komponenten wie hier in diesem bilde sieht, in der Komponenten schreibet man einmal das logic und ui und dann kann man mehrfach diese in die Anwendung nutzen. ein  Komponenten, besteht  aus HTML file, TypeScript file und CSS file.
+
+nun zeige ich wie das Entwicklung Prozess ein neu Dialog Fenster aussieht ohne Nutzung das tool 
+>>>
+
+  
+Ausgangslage: 
+>
+Zuerst besprechen der Product Owner und der Teamleiter, wie das Dialogfenster aussehen soll
+>
+Nach der Besprechung baut der Teamleiter das Dialogdesign im Miro-Board nach
+>
+dann erstellt er ein Jira-Ticket
+>
+und weist er einem Entwickler zu
+>
+Der Entwickler schaut sich das Design aus dem Miro-Board an und überträgt es in den Code.Dafür muss er die HTML aus unseren vorgefertigten Komponenten zusammenbauen und in TypeScript  konfigurieren
+>
+Nach der Fertigstellung das Dialog durch Entwickler prüft der Product Owner, ob der Dialog seinen Vorstellungen entspricht. Falls nicht, muss der Entwickler Änderungen vornehmen.
+
+wie ihr sieht diesem Prozess hat viele schritte und benötigt somit auch lang Entwicklung zeit für ein aufgabe die man wiederholt macht,
+das wegen braucht wir einem lösung um  diesem Prozess zu vereinfachen und ziet zu sparen  hier kommt min tool in spiele 
+
+nun werde ich der Prozess mit meinem Tool
+>>>
+
+Endzustand:
+>
+wie bei dem Ausgangslage bespricht der Product Owner und der Teamleiter, wie das Dialogfenster aussehen soll
+>
+Der Unterschied ist jedoch, dass der Teamleiter während der Besprechung den Dialog direkt mit meinem Tool erstellen kann.
+>
+Dadurch kann er dem Product Owner sofort das Ergebnis zeigen und Änderungen direkt vornehmen.
+>
+Die Schritte, wie das Erstellen eines Miro-Designs und die manuelle Umsetzung durch einen Entwickler, 
+entfallen.
+Somit spart man Zeit und Ressourcen. und  Nicht-Entwickler können mit meinem Tool Dialoge erstellen, ohne Code zu schreiben. Dadurch können sich Entwickler auf die Business-Logik fokussieren.
+
+jz zum Projekt Planung
+
+>>>
+
+projektplanung:
+>
+Für die Planung meines Projekts habe ich zuerst alle Anforderungen ermittelt, die erfüllt werden mussen, um das Projektziel zu erreichen.Dabei habe ich die Anforderungen in funktionale und nicht-funktionale Anforderungen unterteilt.
+>
+Die funktionalen Anforderungen habe ich als Meilensteine definiert und das Projekt Schritt für Schritt mit einem iterativen Ansatz umgesetzt. Nach jedem erreichten Meilenstein habe ich neu geplant und geschaut, ob ich alle funktionalen Anforderungen zeitlich im nächsten Meilenstein umsetzen kann.
+>
+>
+Diesen Ansatz habe ich gewählt, weil das Projekt zeitlich und bei den Ressourcen begrenzt war. Daher konnte ich nur den Umfang anpassen.
+also das Das magische Dreieck das  zeit und kosten und umfang in  Gleichgewicht zu bringen um Projektzeile zu erreichen 
+nun zum zeitpalung
+>>>
+
+zeitpalung:
+Ich habe 7 Stunden für die Analyse eingeplant. In dieser Zeit habe ich die Projektziele formuliert, die Anforderungen ermittelt und  Machbarkeitsanalyse durchgeführt.
+Für den Entwurf habe ich 7 Stunden geplant. Dabei habe ich die Meilensteine definiert und die Benutzeroberflächen entworfen.
+
+Für die Entwicklung habe ich 40 Stunden eingeplant. In dieser Phase habe ich die Entwerfet  Benutzeroberflächen umgesetzt und Funktionen entwickelt, wie z. B.:
+Elemente in die Hauptansicht einfügen,
+die Elemente konfigurieren ,
+die Position von Elementen durch drag and drop ändern
+und dann code zu Generator
+für testen und Fehler Behebung habe ich insgesamt 16 stunden geplant jeweils mit 8 stunden
+dann 10 stunden für die Projektdokumentation        
+>>>
+
+Entwicklungskosten:
+Für das Projekt war nur ich zuständig. Ich habe insgesamt 80 Stunden gearbeitet, und mit einem Azubi-Stundenlohn von 8 Euro ergibt das 640 Euro. Bei der Abnahme waren der Teamleiter und der Ausbilder jeweils 1 Stunde beteiligt, mit einem Stundenlohn von 50 Euro. Insgesamt ergeben sich also 740 Euro für dieses Projekt.
+>>>
+
+live demo
+jz ich werde euch kurz mein tool zeigen dabei werde ich diese Kontakt Formular mit dem tool erstell
+=> zum Anwendung wechseln 
+so sieht mein tool.
+in die Mitte kommen alle hinzufügt Elemente die das Dialog braucht.
+die Elemente kann man hinzufügen wenn man hier in dies Menü List auf gewünschte Komponente klicken. es werde dann ein puppe Dialog offen. wo man ein key und die breit angeben. 
+so für  das Überschrift wählen wir das Komponente Titel Bereich. 
+die Control Name für diese Komponente art kann beliebig sein aber soll nur einmal geben.
+:: Kontakt Formular,
+für die breit kann man zwischen 1 und 4 auswählen 
+:: 4
+am end klicken wir auf Feld hinzufügen. 
+und hier ist die Elemente in Hauptansicht.
+ich werde jz schnelle die andere Elemente hinzufügen.
+marging
+:: mrg
+:: big
+Input
+:: Vorname
+:: 2
+
+:: Nachname
+:: 2
+:: Email
+:: 2
+nummber
+:: Telefon
+:: 2
+Datum
+:: Geburtsdatum
+:: 2
+select
+:: Land
+:: 2
+textarea
+:: Nachricht
+:: 4
+:: row 5
+Button
+:: Senden
+:: 2
+so um das button zu zentrieren
+bruache ich Die Komponent Platzhalter
+Platzhalter
+:: ph 
+:: 1
+so und jz kann ich mein Platzhalter in richtig Position bringen mithelfe das Dragge an dropp Funktion
+
+wenn man dann auf die Elemente  klickt offen ein puppe um diese Element zu konfigurieren diese wird von unser Basse Klassen dann genutzt.
+zb für unser Nachricht will ich das es breite werde gehe ich zum Einstellung und ändre Control rows auf 5 dann speichern.
+
+so wenn man fertig ist mit die design und konfigurieren das Dialog. kann man das HTML code und Typoskript code Kopieren und in sein Komponente einfügen.
+jz mach ich das kurz.
+
+und hier ist die ergebniss.
+
+jz zum Fazit
+>>>
+
+
+Fazit:
+wir ihre live gesehen
+> 
+Mein Tool macht die Entwicklung von Dialogfenstern viel effizienter.
+> 
+und Bessere Ressourcennutzung und schnellere Ergebnisse
+>
+In Zukunft könnte man das Tool noch weiterentwickeln, z. B. um komplette Angular-Komponenten zu generieren oder bestehende Komponenten zu bearbeiten.
+>>>
+>
+hier sind mein Quellen
+>>>
+Dank für eure Aufmerksamkeit 
